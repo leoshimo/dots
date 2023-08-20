@@ -1,0 +1,52 @@
+format = "$all$line_break$character"    # Only prompt in second line
+add_newline = true          # Blank line between comamnds
+command_timeout = 300       # timeout for starship commands
+scan_timeout = 30           # timeout for starship file scan
+
+
+[character]
+success_symbol = "[\\$](bold green)"    # Success symbol to $
+error_symbol = "[\\$](bold red)"        # Success symbol to $
+vicmd_symbol = "[v](bold purple)"       # Success symbol to $
+
+[status]
+disabled = false
+
+[hostname]
+style = "purple dimmed"
+format = "[$hostname]($style)\n"
+
+# Disabled Packages
+[aws]
+disabled = true
+[cobol]
+disabled = true
+[crystal]
+disabled = true
+[dotnet]
+disabled = true
+[nodejs]
+disabled = true # so slow
+[elm]
+disabled = true
+[erlang]
+disabled = true
+[helm]
+disabled = true
+[julia]
+disabled = true
+[kotlin]
+disabled = true
+[hg_branch]
+disabled = true
+[nim]
+disabled = true
+[nix_shell]
+disabled = true
+[ocaml]
+disabled = true
+[openstack]
+disabled = true
+[purescript]
+disabled = true
+
