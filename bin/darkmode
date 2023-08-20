@@ -1,0 +1,18 @@
+#!/usr/bin/env osascript
+# darkmode - Set darkmode
+# Usage:
+#   darkmode        - Toggle darkmode
+#   darkmode true   - Turn on darkmode
+#   darkmode false  - Turn off darkmode
+
+on run argv
+    tell application "System Events"
+        tell appearance preferences
+            if (length of argv) = 0 then
+                return dark mode
+            else if (length of argv) = 1 then
+                set dark mode to (item 1 of argv)
+            end if
+        end tell
+    end tell
+end run

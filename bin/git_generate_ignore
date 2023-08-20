@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# git_generate_ignore - Generate gitignore files for specified categories
+#
+
+set -eu
+
+IGNORED=$@
+curl -sL https://www.toptal.com/developers/gitignore/api/$IGNORED
+

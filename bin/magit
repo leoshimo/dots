@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# magit - Launch magit
+#
+
+set -euo pipefail
+exec emacsclient -nw -c --eval "(progn (magit-status) (delete-other-windows))" --create-frame --alternate-editor=""

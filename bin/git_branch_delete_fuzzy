@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# git_branch_delete_fuzzy - Interactively delete branches
+#
+
+set -euo pipefail
+
+git branch \
+  | fzf --multi --reverse --header="Select branches to delete" --height=15 \
+  | xargs git branch -D
+

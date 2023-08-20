@@ -1,0 +1,9 @@
+#!/bin/zsh
+# xcinfo - Show SDK Information for current xcode
+
+xcode-select -p
+xcodebuild -version -sdk 2> /dev/null \
+    | grep -e '^ProductBuildVersion' -e '^ProductVersion' -e '^ProductName' -e '^Build version' \
+    | tr -d '\n' \
+    | sed 's/ProductVersion://g' | sed 's/ProductName//g' | sed 's/ProductBuildVersion: /@/g' | sed 's/Build version /@Xcode: /g' \
+    | tr '@' '\n' | sort -u | grep '.'

@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# tpalette - Palette program program
+
+set -euo pipefail
+
+for ((i=0; i<$(tput colors); i++)) ;do
+    printf '  '
+    tput setab $i
+    tput setaf $(( ( (i>231&&i<244 ) || ( (i<17)&& (i%8<2)) ||
+        (i>16&&i<232)&& ((i-16)%6 <(i<100?3:2) ) && ((i-16)%36<15) )?7:16))
+    printf " C %03d " $i
+    tput op
+    (( ((i<16||i>231) && ((i+1)%8==0)) || ((i>16&&i<232)&& ((i-15)%6==0)) )) &&
+        printf "\n" ''
+done
+

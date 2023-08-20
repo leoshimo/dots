@@ -1,0 +1,26 @@
+#!/bin/zsh
+# xcselect - Xcode Select
+# Switch between Xcode installations available on device
+
+# Current Xcode
+CUR_XC=$(xcode-select -p | grep -oe '.*\.app')
+
+# All Xcode excluding `CUR_XC`
+ALL_XC=($(mdfind kMDItemCFBundleIdentifier=com.apple.dt.Xcode | grep -v $CUR_XC))
+
+# Print in single column
+COLUMNS=1
+
+echo "Current:\n   ${CUR_XC}"
+
+echo "Switch to:"
+select x in $ALL_XC; do
+
+    if [ -z $x ]; then
+        exit 1 # No change if blank
+    fi
+
+    echo "Selected $x"
+    sudo xcode-select -s $x
+    break
+done

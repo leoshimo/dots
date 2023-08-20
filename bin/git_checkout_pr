@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# git_checkout_pr - Utility to checkout open PRs on Github
+#
+
+gh pr list | fzf --reverse | cut -f1 | xargs gh pr checkout

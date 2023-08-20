@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+# chrome - Open chrome browser w/ uri
+
+URI=$@
+
+# Add https if not it seems like an website url
+if grep -vq "http.*" <<< "$URI" && [ ! -f $URI ]; then
+    URI="https://$URI"
+fi
+
+open -a "Google Chrome" $URI
+

@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+# appscan - Quick scan on App bundle
+
+PROG=$(basename $0)
+APP=$1
+if [ -z $APP ]; then
+    echo "Usage: $PROG <.app>"
+    exit 0
+fi
+
+echo "*** codesign"
+codesign --display -vvvv -r- $APP
+
+echo "\n*** ENTITLEMENTS"
+codesign -d --entitlements :- $APP
+
+echo "\n*** SPCTL"
+spctl --assess -vvv $APP
+
+
+

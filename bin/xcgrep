@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+# xcgrep        - Grep through Xcode SDK
+# Shortcut to run grep prog through XCode's include paths.
+#
+# Examples:
+#   $ xcgrep "AF_INET6"                        # Grep for AF_INET6
+#   $ xcgrep "struct sockaddr_in6 \{" -l       # List files containing def for `struct sockaddr_in6`
+#
+# Future:
+# - Support other SDKs (iphoneos, appletvos)
+# - Support framework headers
+
+SDK="macosx"
+SDKROOT_DIR=$(xcrun --sdk $SDK --show-sdk-path)
+
+INCLUDE_DIR="$SDKROOT_DIR/usr/include"
+rg "$@" -- $INCLUDE_DIR
+

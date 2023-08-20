@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import urllib.parse, sys, argparse;
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--decode", help="Decode input instead of encoding",
+                    action="store_true")
+args = parser.parse_args()
+
+if args.decode:
+    print(urllib.parse.unquote(input()))
+else:
+    print(urllib.parse.quote(input()))

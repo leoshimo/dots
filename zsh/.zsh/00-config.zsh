@@ -6,11 +6,10 @@ export PAGER=less
 export TERM='xterm-256color'
 
 ## Paths
-export ZSCRIPT_DIR=$HOME/.zsh/scripts      # scripts
 path=(
   /opt/homebrew/bin
   $HOME/.cargo/bin
-  $ZSCRIPT_DIR
+  $HOME/dots/bin
   $path
 )
 

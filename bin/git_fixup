@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# git_fixup - Interactive fixup commit (usually followed by git rebase -i --autosquash)
+#
+
+set -euo pipefail
+
+COMMIT=$(git log --oneline -n 20 | fzf | cut -f 1 -d " ")
+git commit --no-verify --fixup "$COMMIT"
+

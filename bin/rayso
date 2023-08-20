@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# rayso - Pipe from stdin to rayso
+
+CONTENT=$(cat - | base64 | urlencode)
+URL="https://ray.so/#code=${CONTENT}&language="
+open "${URL}"

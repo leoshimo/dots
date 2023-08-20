@@ -1,0 +1,14 @@
+#!/usr/bin/env osascript
+# desktop_image - Set desktop image
+# Usage:
+#   desktop_image <path_to_img>
+
+on run argv
+	if (length of argv) = 1 then
+        tell application "System Events"
+            tell every desktop
+                set picture to (item 1 of argv)
+            end tell
+        end tell
+	end if
+end run

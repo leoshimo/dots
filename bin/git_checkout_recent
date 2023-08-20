@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# git_checkout_recent - Checkout git branches (including remote) sorted by recency
+#
+
+set -euo pipefail
+
+branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+branch=$(echo "$branches" |
+         fzf --reverse --height=15 --header="Switch to branch" --no-multi) &&
+git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+
