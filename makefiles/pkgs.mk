@@ -5,7 +5,7 @@ pkgs_all:						## Install all packages
 	$(MAKE) pkgs_core
 	$(MAKE) pkgs_apps
 ifeq ($(OS),Darwin)
-	$(MAKE) pkgs_all_macos
+	$(MAKE) pkgs_macos_all
 endif
 
 .PHONY: pkgs_core
@@ -13,13 +13,13 @@ pkgs_core: 						## Install core packages
 	$(MAKE) pkgs_antidote
 	$(MAKE) pkgs_powerline_fonts
 ifeq ($(OS),Darwin)
-	$(MAKE) pkgs_core_macos
+	$(MAKE) pkgs_macos_core
 endif
 
 .PHONY: pkgs_apps
 pkgs_apps: 						## Install app packages
 ifeq ($(OS),Darwin)
-	$(MAKE) pkgs_apps_macos
+	$(MAKE) pkgs_macos_apps
 endif
 
 # Antidote - https://github.com/mattmc3/antidote
