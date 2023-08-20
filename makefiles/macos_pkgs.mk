@@ -20,3 +20,10 @@ install_brew:
 .PHONY: pkgs_core
 pkgs_core: ## Install core packages
 	$(BREW_BIN) bundle --file=homebrew/Brewfile-core
+
+.PHONY: pkgs_apps
+pkgs_apps: $(BREW_BIN)	## Install app packages
+	@(command -v mas >/dev/null || $(BREW_BIN) install mas)
+	@(mas account | grep --quiet "Not signed in") && \
+		(echo "Error: Not signed into App Store"; open -a "App Store") || \
+	 	$(BREW_BIN) bundle --file=homebrew/Brewfile-apps
