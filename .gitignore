@@ -34,3 +34,4 @@ var/
 /bookmarks
 /projectile-bookmarks.eld
 /projectile.cache
+/zsh/.zsh/antidote_plugins.zsh
