@@ -17,6 +17,7 @@ endif
 link: ## Setup symlinks
 	# Shared
 	$(STOW_BIN) stow
+	$(STOW_BIN) zsh
 
 ifeq ($(OS),Darwin)
 	# TODO
