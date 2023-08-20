@@ -1,0 +1,38 @@
+#
+# alacritty config
+#
+
+font:
+  size: 14.0
+
+  normal:
+    family: Fira Mono for Powerline
+    style: Regular
+
+  bold:
+    style: Bold
+
+  italic:
+    style: Italic
+
+  AppleFontSmoothing: true
+
+window:
+  padding:
+    x: 5
+    y: 5
+  dynamic_padding: false
+  decorations: none
+  startup_mode: Maximized
+  option_as_alt: OnlyLeft
+
+scrolling:
+  history: 100000
+
+# mouse:
+#   hide_when_typing: true
+
+# # Fixes opt+key not working on Mac
+
+# Reload Alacritty if the configuration changes
+live_config_reload: true

@@ -19,3 +19,4 @@ link: ## Setup symlinks
 	$(STOW_BIN) zsh
 	$(STOW_BIN) tmux
 	$(STOW_BIN) emacs
+	$(STOW_BIN) alacritty
