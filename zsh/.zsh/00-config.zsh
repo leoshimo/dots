@@ -30,20 +30,6 @@ bindkey -M viins '^H' backward-delete-char
 # Colors
 autoload -Uz colors && colors
 
-# Vi: Mode map
-bindkey -v			# Vim mode
-export KEYTIMEOUT=1		# Snappier <ESC>
-
-# Vi: Edit commands in vim via `ESC+v`
-autoload -Uz edit-command-line; zle -N edit-command-line
-bindkey -M vicmd 'v' edit-command-line			# Bind 'v' in NORMAL mode
-
-# Completion Navigation via vi keys
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-
 # History
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 HISTSIZE=10000
@@ -69,6 +55,21 @@ zstyle ':completion:*:*:*:*:*' menu select						                    # Show compl
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'	# Completions are case insensitive
 zstyle ':completion:*' list-colors '${LS_COLORS}'					                # Completion colored by type
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=29=34'
+
+# Vi: Mode map
+bindkey -v			# Vim mode
+export KEYTIMEOUT=1		# Snappier <ESC>
+
+# Vi: Edit commands in vim via `ESC+v`
+autoload -Uz edit-command-line; zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line			# Bind 'v' in NORMAL mode
+
+# Vi: Completion Navigation (Must be after complist)
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
