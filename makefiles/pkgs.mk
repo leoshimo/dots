@@ -11,6 +11,7 @@ endif
 .PHONY: pkgs_core
 pkgs_core: 						## Install core packages
 	$(MAKE) pkgs_antidote
+	$(MAKE) pkgs_powerline_fonts
 ifeq ($(OS),Darwin)
 	$(MAKE) pkgs_core_macos
 endif
@@ -27,3 +28,12 @@ ANTIDOTE := $(HOME)/.antidote
 pkgs_antidote: $(ANTIDOTE)
 $(ANTIDOTE):
 	git clone --depth=1 https://github.com/mattmc3/antidote.git $(HOME)/.antidote
+
+# Powerline Fonts - https://github.com/powerline/fonts
+POWERLINE_FONTS := $(HOME)/.config/powerline-fonts
+.PHONY: pkgs_powerline_fonts
+pkgs_powerline_fonts: $(POWERLINE_FONTS)
+$(POWERLINE_FONTS):
+	mkdir -p $(POWERLINE_FONTS)
+	git clone https://github.com/powerline/fonts.git --depth=1 $(POWERLINE_FONTS)
+	$(POWERLINE_FONTS)/install.sh
