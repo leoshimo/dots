@@ -5,11 +5,9 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-versions"
 
-tap "d12frosted/emacs-plus"
-
 brew "bat"
 brew "coreutils"
-brew "emacs-plus@29"
+brew "emacs"
 brew "fd"
 brew "fzf"
 brew "gh"

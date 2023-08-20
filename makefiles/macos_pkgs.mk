@@ -9,7 +9,7 @@ ifeq ($(ARCH),arm)
 endif
 
 .PHONY: pkgs_all
-pkgs_all: install_brew pkgs_core ## Install all pkgs
+pkgs_all: install_brew pkgs_core ## Install all packages
 
 .PHONY: install_brew
 install_brew:

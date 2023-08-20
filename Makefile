@@ -7,7 +7,7 @@ ifeq ($(OS),Linux)
 endif
 ifeq ($(OS),Darwin)
 	include makefiles/macos_*.mk
-	SETUP = prefs
+	SETUP = pkgs_all prefs
 endif
 
 help:	## Show Help
