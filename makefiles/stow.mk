@@ -12,14 +12,10 @@ ifeq ($(ARCH),arm)
 endif
 endif
 
-
 .PHONY: link
 link: ## Setup symlinks
 	# Shared
 	$(STOW_BIN) stow
 	$(STOW_BIN) zsh
+	$(STOW_BIN) tmux
 	$(STOW_BIN) emacs
-
-ifeq ($(OS),Darwin)
-	# TODO
-endif
