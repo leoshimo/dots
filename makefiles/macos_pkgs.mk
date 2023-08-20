@@ -3,9 +3,11 @@
 ARCH := $(shell uname -p)
 ifeq ($(ARCH),i386)
 	BREW_BIN := /usr/local/bin/brew
+	MAS_BIN := /usr/local/bin/mas
 endif
 ifeq ($(ARCH),arm)
 	BREW_BIN := /opt/homebrew/bin/brew
+	MAS_BIN := /opt/homebrew/bin/mas
 endif
 
 .PHONY: pkgs_all
@@ -23,7 +25,6 @@ pkgs_core: ## Install core packages
 
 .PHONY: pkgs_apps
 pkgs_apps: $(BREW_BIN)	## Install app packages
-	@(command -v mas >/dev/null || $(BREW_BIN) install mas)
-	@(mas account | grep --quiet "Not signed in") && \
+	@($(MAS_BIN) account | grep --quiet "Not signed in") && \
 		(echo "Error: Not signed into App Store"; open -a "App Store") || \
 	 	$(BREW_BIN) bundle --file=homebrew/Brewfile-apps
