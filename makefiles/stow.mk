@@ -20,3 +20,4 @@ link: ## Setup symlinks
 	$(STOW_BIN) tmux
 	$(STOW_BIN) emacs
 	$(STOW_BIN) alacritty
+	$(STOW_BIN) git

@@ -1,0 +1,121 @@
+# Git Config
+
+[user]
+  name = leoshimo
+  email = 56844000+leoshimo@users.noreply.github.com
+
+[init]
+  defaultBranch = main
+
+[color]
+  ui = auto
+
+[core]
+  editor = nvim
+  pager = less
+  excludesfile = ~/.config/git/gitignore
+
+[diff]
+  tool = vimdiff
+  algorithm = patience
+  indentHeuristic = true
+  renames = true
+
+[diff "plist"]
+  textconv = plutil -p
+
+[difftool]
+	prompt = false
+	trustExitCode = true
+
+[merge]
+  tool = vimdiff
+
+[mergetool]
+  prompt = false
+
+[mergetool "vimdiff"]
+	path = nvim
+
+[pull]
+  ff = only
+
+[includeIf "gitdir:**/proj-humane/**"]
+  path = ~/.config/git/config-humane
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+  ; checkout
+  co = checkout
+  checkoutfuzzy = !git_checkout_fuzzy
+  cof = !git_checkout_fuzzy
+  checkoutrecent = !git_checkout_recent
+  cor = !git_checkout_recent
+  checkoutpreview = !git_checkout_preview
+  cop = !git_checkout_preview
+  checkoutpr = !git_checkout_pr
+  copr = !git_checkout_pr
+
+  f = fetch
+  p = pull
+
+  ; push
+  pu = push
+  puu = push -u origin HEAD
+  pufwl = push --force-with-lease
+
+  ; add
+  a = add
+
+  ; reset
+  rh = reset --hard
+
+  ; commit
+  cc = commit
+  ca = commit --amend
+  ce = commit --amend --no-edit
+
+  ; inspect
+  s = status
+  sh = show
+  l = log
+  lp = log --patch
+  ll = log --oneline
+  lll = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+  ; branch
+  br = branch
+  brdf = !git_branch_delete_fuzzy
+
+  ; diff
+  d = diff
+  ds = diff --staged
+  dH = diff HEAD
+
+  r = rebase
+  m = merge
+  cp = cherry-pick
+
+  ; greppatch
+  greppatch = log --patch -G  ; search patch text
+  gp = greppatch
+
+  ; grepmesage
+  grepmessage = log --grep    ; search commit messages
+  gm = grepmessage
+
+  ; stash
+  stashfuzzy = !git_stash_fuzzy
+  ssf = !git_stash_fuzzy
+
+  ; fixup
+  fixup = !git_fixup
+  ignore = !git_generate_ignore
+
+  ; cherry-pick
+  cp = cherry-pick
