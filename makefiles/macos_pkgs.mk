@@ -11,20 +11,16 @@ ifeq ($(ARCH),arm)
 endif
 
 .PHONY: pkgs_all
-pkgs_all: install_brew pkgs_core pkgs_apps ## Install all packages
+pkgs_all: pkgs_core pkgs_apps ## Install all packages
 
-.PHONY: install_brew
-install_brew:
-	# Install brew if needed
+$(BREW_BIN):
 	[ -f $(BREW_BIN) ] || \
 		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 .PHONY: pkgs_core
-pkgs_core: ## Install core packages
+pkgs_core: $(BREW_BIN) ## Install core packages
 	$(BREW_BIN) bundle --file=homebrew/Brewfile-core
 
 .PHONY: pkgs_apps
 pkgs_apps: $(BREW_BIN)	## Install app packages
-	@($(MAS_BIN) account | grep --quiet "Not signed in") && \
-		(echo "Error: Not signed into App Store"; open -a "App Store") || \
-	 	$(BREW_BIN) bundle --file=homebrew/Brewfile-apps
+	$(BREW_BIN) bundle --file=homebrew/Brewfile-apps
