@@ -1,4 +1,5 @@
-# Gitignore file
+# tpm
+tmux/.tmux/plugins
 
 # Remove backup files
 *#
