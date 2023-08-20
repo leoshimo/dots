@@ -18,6 +18,7 @@ link: ## Setup symlinks
 	# Shared
 	$(STOW_BIN) stow
 	$(STOW_BIN) zsh
+	$(STOW_BIN) emacs
 
 ifeq ($(OS),Darwin)
 	# TODO
