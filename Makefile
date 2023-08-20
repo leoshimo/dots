@@ -1,5 +1,8 @@
 # Makefile for Repository
 
+# Global
+include makefiles/stow.mk
+
 # Platform-Specific
 OS := $(shell uname -s)
 ifeq ($(OS),Linux)
@@ -7,7 +10,7 @@ ifeq ($(OS),Linux)
 endif
 ifeq ($(OS),Darwin)
 	include makefiles/macos_*.mk
-	SETUP = pkgs_all prefs
+	SETUP = pkgs_all prefs link
 endif
 
 help:	## Show Help
