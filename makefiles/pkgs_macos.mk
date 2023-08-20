@@ -10,17 +10,17 @@ ifeq ($(ARCH),arm)
 	MAS_BIN := /opt/homebrew/bin/mas
 endif
 
-.PHONY: pkgs_all
-pkgs_all: pkgs_core pkgs_apps ## Install all packages
+.PHONY: pkgs_macos_all
+pkgs_macos_all: pkgs_macos_core pkgs_macos_apps
 
 $(BREW_BIN):
 	[ -f $(BREW_BIN) ] || \
 		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-.PHONY: pkgs_core
-pkgs_core: $(BREW_BIN) ## Install core packages
+.PHONY: pkgs_macos_core
+pkgs_macos_core: $(BREW_BIN)
 	$(BREW_BIN) bundle --file=homebrew/Brewfile-core
 
-.PHONY: pkgs_apps
-pkgs_apps: $(BREW_BIN)	## Install app packages
+.PHONY: pkgs_macos_apps
+pkgs_macos_apps: $(BREW_BIN)
 	$(BREW_BIN) bundle --file=homebrew/Brewfile-apps

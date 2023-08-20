@@ -1,0 +1,4 @@
+# Plugins for antidote - https://github.com/mattmc3/antidote
+
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
