@@ -9,11 +9,13 @@ ifeq ($(ARCH),arm)
 endif
 
 .PHONY: pkgs_all
-pkgs_all: install_brew ## Install all pkgs
+pkgs_all: install_brew pkgs_core ## Install all pkgs
 
 .PHONY: install_brew
 install_brew:
-	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	# Install brew if needed
+	[ -f $(BREW_BIN) ] || \
+		/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 .PHONY: pkgs_core
 pkgs_core: ## Install core packages
