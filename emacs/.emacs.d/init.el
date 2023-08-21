@@ -40,3 +40,4 @@
  )
 
 (use-package lox-mode)
+(use-package rec-mode)
