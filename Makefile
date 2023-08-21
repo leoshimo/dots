@@ -6,10 +6,10 @@ include makefiles/pkgs.mk
 include makefiles/stow.mk
 
 ifeq ($(OS),Darwin)
-	include makefiles/macos_*.mk
+	include makefiles/*macos*.mk
 endif
 ifeq ($(OS),Linux)
-	include makefiles/linux_*.mk
+	include makefiles/*linux*.mk
 endif
 
 help:	## Show Help
