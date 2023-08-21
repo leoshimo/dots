@@ -33,7 +33,7 @@
    "fF" '(project-find-file :which-key "File (Project)")
    "fo" '(find-file-other-window :which-key "File (Other)")
    "fr" '(consult-recent-file :which-key "File (RecentF)")
-   "fs" '(toggle-scratch-other-window :which-key "Scratch")
+   "fs" '(toggle-scratch-org-other-window :which-key "Scratch")
 
    ;; gptel
    "og" '(toggle-gptel-other-window :which-key "Toggle GPT")
@@ -266,3 +266,12 @@ Delete: _o_nly  _d_elete
   (if (not (string= "*ChatGPT*" (buffer-name)))
       (pop-to-buffer (gptel "*ChatGPT*" (getenv "OPENAI_API_KEY")))
     (delete-windows-on "*ChatGPT*")))
+
+(defun toggle-scratch-org-other-window ()
+  "Toggle the scratch org buffer in other window"
+  (interactive)
+  (let* ((filepath "~/proj/org/scratch.org")
+         (buf (find-buffer-visiting filepath)))
+    (if (and buf (get-buffer-window buf))
+        (delete-window (get-buffer-window buf))
+        (find-file-other-window filepath))))
