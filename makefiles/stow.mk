@@ -22,3 +22,4 @@ link: ## Setup symlinks
 	$(STOW_BIN) alacritty
 	$(STOW_BIN) git
 	$(STOW_BIN) starship
+	$(STOW_BIN) raycast
