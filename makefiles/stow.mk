@@ -22,6 +22,7 @@ link: ## Setup symlinks
 	$(STOW_BIN) alacritty
 	$(STOW_BIN) git
 	$(STOW_BIN) starship
+	$(STOW_BIN) vim
 
 ifeq ($(OS),Darwin)
 	$(STOW_BIN) hammerspoon
