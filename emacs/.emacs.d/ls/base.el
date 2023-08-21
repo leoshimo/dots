@@ -14,9 +14,6 @@
 (setq-default indicate-empty-lines t)
 (setq-default require-final-newline t)
 
-;; mouse in term
-(xterm-mouse-mode 1)
-
 ;; scratch is org
 (setq initial-major-mode 'org-mode)
 
@@ -31,6 +28,12 @@
     (progn
       (tool-bar-mode -1)
       (scroll-bar-mode -1)))
+
+;; Mouse
+(xterm-mouse-mode 1)
+(unless window-system
+  (require 'mwheel)
+  (mwheel-install))
 
 ;; Visual bell
 (setq visible-bell t)
