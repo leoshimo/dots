@@ -11,6 +11,9 @@ cask "kindle"
 cask "raycast"
 cask "sublime-text"
 
+tap "smudge/smudge"
+brew "smudge/smudge/nightlight"
+
 brew "mas"
 mas "Hidden Bar", id: 1452453066
 mas "Spark", id: 1176895641
