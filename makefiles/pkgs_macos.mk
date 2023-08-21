@@ -30,4 +30,4 @@ pkgs_macos_apps: $(BREW_BIN)
 .PHONY: pkgs_fzf
 pkgs_fzf: $(BREW_BIN)
 	# Brew-specific installation
-	[ -f $(HOME)/.fzf.zsh ] || $(BREW_PREFIX)/opt/fzf/install; rm ~/.fzf.bash
+	[ -f $(HOME)/.fzf.zsh ] || ($(BREW_PREFIX)/opt/fzf/install; rm ~/.fzf.bash)
