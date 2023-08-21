@@ -23,3 +23,7 @@ link: ## Setup symlinks
 	$(STOW_BIN) git
 	$(STOW_BIN) starship
 	$(STOW_BIN) raycast
+
+ifeq ($(OS),Darwin)
+	$(STOW_BIN) hammerspoon
+endif
