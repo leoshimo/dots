@@ -23,3 +23,7 @@ ifeq ($(OS),Darwin)
 	$(MAKE) prefs
 endif
 
+repos: ## Setup repos
+	mkdir -p $(HOME)/proj
+	[ -d $(HOME)/proj/org ] || \
+		git clone git@github.com:leoshimo/org.git $(HOME)/proj/org

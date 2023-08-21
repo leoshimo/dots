@@ -17,4 +17,5 @@ $ make setup
 $ make help        # see all commands
 $ make pkg_all     # install packages
 $ make link        # relink symlinks
+$ make repos       # clone repos
 ```
