@@ -46,3 +46,10 @@ prefs_keymap:
 	defaults write -g ApplePressAndHoldEnabled 0
 	hidutil property --set '{ "UserKeyMapping": [{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E4}] }'
 
+
+DESKTOP_IMG := "./zsh/.zsh/scripts/desktop_image"
+DARKMODE 	:= "./zsh/.zsh/scripts/darkmode"
+.PHONY: pref_theme
+prefs_theme:
+	$(DESKTOP_IMG) "/System/Library/Desktop Pictures/Solid Colors/Black.png"
+	$(DARKMODE) true
