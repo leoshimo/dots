@@ -13,9 +13,12 @@ prefs_finder:
 	defaults write com.apple.finder ShowPathbar -bool YES 					# Show path bar
 	killall -9 Finder
 
-.PHONY: prefs_sleep
-prefs_sleep:
-	 sudo pmset -a displaysleep 5	# sleep display after 5 min for all
+.PHONY: prefs_display
+prefs_display:
+	sudo pmset -a displaysleep 5	# sleep display after 5 min for all
+	# Configure nightshift
+	nightlight on
+	nightlight schedule start
 
 .PHONY: prefs_dock
 prefs_dock:
