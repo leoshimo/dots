@@ -66,6 +66,12 @@
         "options": {
           "full_name": "firefox"
         }
+      },
+      "docker": {
+        "version": "4.22.0,117440",
+        "options": {
+          "full_name": "homebrew/cask/docker"
+        }
       }
     },
     "brew": {

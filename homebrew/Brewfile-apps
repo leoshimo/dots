@@ -11,6 +11,7 @@ cask "hammerspoon"
 cask "kindle"
 cask "raycast"
 cask "sublime-text"
+cask "homebrew/cask/docker"
 
 tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
