@@ -122,7 +122,7 @@
 			<key>FreeBSD_Handbook</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:45:13Z</date>
+				<date>2023-08-23T20:02:48Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -144,7 +144,7 @@
 			<key>IntelASMx86</key>
 			<dict>
 				<key>date</key>
-				<date>2023-04-07T05:41:18Z</date>
+				<date>2023-08-23T20:02:49Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -166,7 +166,7 @@
 			<key>Neovim</key>
 			<dict>
 				<key>date</key>
-				<date>2022-08-26T03:33:29Z</date>
+				<date>2023-08-23T20:02:48Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -208,102 +208,102 @@
 			<key>http://kapeli.com/feeds/Android.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:32Z</date>
+				<date>2023-08-23T20:07:56Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Boost.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:29Z</date>
+				<date>2023-08-23T20:06:37Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/C++.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:45:38Z</date>
+				<date>2023-08-23T20:04:06Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/C.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:32Z</date>
+				<date>2023-08-23T20:05:29Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/CSS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:45:26Z</date>
+				<date>2023-08-23T20:06:47Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Elixir.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-09-27T05:47:49Z</date>
+				<date>2023-08-23T20:06:20Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Erlang.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-09-27T05:47:52Z</date>
+				<date>2023-08-23T20:04:18Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/HTML.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:42Z</date>
+				<date>2023-08-23T20:03:22Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/JavaScript.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:45Z</date>
+				<date>2023-08-23T20:05:01Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Java_SE16.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:41Z</date>
+				<date>2023-08-23T20:06:56Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Java_SE8.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:45:45Z</date>
+				<date>2023-08-23T20:04:47Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Lua_5.4.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:32Z</date>
+				<date>2023-08-23T20:06:11Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Man_Pages.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:42Z</date>
+				<date>2023-08-23T20:06:17Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/NodeJS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-09-19T04:12:30Z</date>
+				<date>2023-08-23T20:06:10Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Python_3.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:35Z</date>
+				<date>2023-08-23T20:03:32Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/React.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-05-28T17:35:32Z</date>
+				<date>2023-08-23T20:06:14Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Rust.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-07-28T23:13:45Z</date>
+				<date>2023-08-23T20:06:06Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Spring_Framework.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-31T04:28:52Z</date>
+				<date>2023-08-23T20:03:08Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Tcl.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-30T02:47:37Z</date>
+				<date>2023-08-23T20:06:16Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/VueJS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2022-05-28T17:35:36Z</date>
+				<date>2023-08-23T20:05:11Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>
@@ -663,5 +663,7 @@
 		<key>uninstalled</key>
 		<dict/>
 	</dict>
+	<key>windowStyle</key>
+	<string>HUD</string>
 </dict>
 </plist>
