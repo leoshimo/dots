@@ -2,7 +2,7 @@
   "entries": {
     "cask": {
       "1password": {
-        "version": "8.10.9",
+        "version": "8.10.12",
         "options": {
           "full_name": "1password"
         }
@@ -26,13 +26,13 @@
         }
       },
       "dropbox": {
-        "version": "180.4.4912",
+        "version": "181.4.5678",
         "options": {
           "full_name": "dropbox"
         }
       },
       "google-chrome": {
-        "version": "116.0.5845.96",
+        "version": "116.0.5845.110",
         "options": {
           "full_name": "google-chrome"
         }
@@ -50,7 +50,7 @@
         }
       },
       "raycast": {
-        "version": "1.57.1",
+        "version": "1.57.2",
         "options": {
           "full_name": "raycast"
         }
@@ -68,7 +68,7 @@
         }
       },
       "docker": {
-        "version": "4.22.0,117440",
+        "version": "4.22.1,118664",
         "options": {
           "full_name": "homebrew/cask/docker"
         }
@@ -147,7 +147,7 @@
   "system": {
     "macos": {
       "ventura": {
-        "HOMEBREW_VERSION": "4.1.5",
+        "HOMEBREW_VERSION": "4.1.6",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
         "CLT": "14.3.1.0.1.1683849156",
