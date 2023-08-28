@@ -38,8 +38,10 @@ $(POWERLINE_FONTS):
 	git clone https://github.com/powerline/fonts.git --depth=1 $(POWERLINE_FONTS)
 	$(POWERLINE_FONTS)/install.sh
 
-# Rustup - https://rustup.rs
+# Rust
 .PHONY: pkgs_rust
 pkgs_rust:		## Install packages for Rust Development
+	# Rustup - https://rustup.rs
 	command -v rustup >/dev/null || \
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+	rustup component add rust-analyzer
