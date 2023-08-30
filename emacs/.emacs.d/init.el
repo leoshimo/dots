@@ -21,7 +21,6 @@
 (load-library "which-key")
 (load-library "project")
 (load-library "restclient")
-(load-library "scratch")
 (load-library "ls-hideshow")
 
 ;; (load-library "window-split")
