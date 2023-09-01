@@ -42,3 +42,4 @@
 (use-package rec-mode)
 
 (use-package lua-mode)
+(recentf-mode)
