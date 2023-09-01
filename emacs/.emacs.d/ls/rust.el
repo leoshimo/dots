@@ -6,4 +6,6 @@
 ;; (use-package rust-mode)
 
 ;; rustic - https://github.com/brotzeit/rustic
-(use-package rustic)
+(use-package rustic
+  :config
+  (setq rustic-compile-directory-method 'rustic-buffer-workspace))
