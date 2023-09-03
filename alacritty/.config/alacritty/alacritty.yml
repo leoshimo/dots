@@ -19,8 +19,8 @@ font:
 
 window:
   padding:
-    x: 5
-    y: 5
+    x: 8
+    y: 8
   dynamic_padding: false
   decorations: none
   startup_mode: Maximized
