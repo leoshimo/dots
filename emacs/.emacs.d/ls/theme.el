@@ -11,10 +11,8 @@
 ;; modus-themes - https://protesilaos.com/emacs/modus-themes
 (use-package modus-themes
   :config
-  (load-theme 'modus-vivendi t)
-  ;; (load-theme 'modus-vivendi-tinted t)
-  ;; (load-theme 'modus-vivendi-deuteranopia t)
-  ;; (load-theme 'modus-vivendi-tritanopia t)
+  (load-theme 'modus-vivendi-tritanopia t)
+  (setq modus-themes-to-toggle '(modus-vivendi-tritanopia modus-operandi-tinted))
 )
 
 ;; smart-mode-line
