@@ -48,3 +48,5 @@
 (use-package rg
   :config
   (rg-enable-default-bindings))
+
+(setq undo-outer-limit 72000000)
