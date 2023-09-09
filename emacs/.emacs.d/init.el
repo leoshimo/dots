@@ -50,3 +50,10 @@
   (rg-enable-default-bindings))
 
 (setq undo-outer-limit 72000000)
+
+(use-package janet-mode)
+(straight-use-package '(janet
+   :type git
+   :host github
+   :repo "serialdev/ijanet-mode")
+)
