@@ -29,8 +29,7 @@
 
    ;; file / buffer
    "f" '(:ignore t :which-key "Files")
-   "ff" '(find-file :which-key "File")
-   "fF" '(project-find-file :which-key "File (Project)")
+   "ff" '(project-find-file :which-key "File (Project)")
    "fo" '(find-file-other-window :which-key "File (Other)")
    "fr" '(consult-recent-file :which-key "File (RecentF)")
    "fs" '(toggle-scratch-org-other-window :which-key "Scratch")
