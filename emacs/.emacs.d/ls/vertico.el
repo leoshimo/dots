@@ -58,12 +58,7 @@
    ("C-h B" . embark-bindings)) 
   :init
   ;; Optionally replace the key help with a completing-read interface
-  (setq prefix-help-command #'embark-prefix-help-command)
-
-  ;; Show the Embark target at point via Eldoc.  You may adjust the Eldoc
-  ;; strategy, if you want to see the documentation from multiple providers.
-  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
-  )
+  (setq prefix-help-command #'embark-prefix-help-command))
 
 (use-package embark-consult
   :after (embark consult)
