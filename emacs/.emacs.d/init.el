@@ -22,8 +22,9 @@
 (load-library "project")
 (load-library "restclient")
 (load-library "ls-hideshow")
-
+(load-library "window")
 ;; (load-library "window-split")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
