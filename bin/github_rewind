@@ -1,0 +1,42 @@
+#!/usr/bin/env sh
+# github_rewind - Browse the beginnings of a github repo
+#
+
+set -eu
+
+URL="${1:-}"
+
+usage() {
+    echo "usage: github_rewind URL\nexample:\n    github_rewind https://github.com/leoshimo/vrs"
+}
+
+if [ -z "$URL" ]; then
+    usage
+    exit 1
+fi
+
+# Username + Repo specifier like "leoshimo/vrs" out of URLs like "https://github.com/leoshimo/vrs"
+REPO_SPEC=$(echo "$URL" | sed -n 's/^.*github.com\///p')
+if [ -z "$REPO_SPEC" ]; then
+    echo "error: failed to extract repo spec\n" >&2
+    usage
+    exit 1
+fi
+
+
+RESP=$(curl -si "https://api.github.com/repos/$REPO_SPEC/commits?per_page=1")
+COMMIT_COUNT=$(echo "$RESP" | sed -n '/^[Ll]ink:/ s/.*"next".*page=\([0-9]*\).*"last".*/\1/p')
+SHA=$(echo "$RESP" | sed -n '/sha/ s/.*"sha": "\([a-zA-Z0-9]*\).*/\1/p' | head -1)
+
+if [ -z "$SHA" ]; then
+    echo "error: failed to fetch repo info"
+    exit 1
+fi
+
+# Trick from  https://stackoverflow.com/questions/28533602/how-to-navigate-to-the-earliest-commit-in-a-repository
+# Modified to align w/ page offsets so previous button works
+COMMIT_PER_PAGE=35
+OFFSET=$((($COMMIT_COUNT / $COMMIT_PER_PAGE) * $COMMIT_PER_PAGE - 1))
+
+URL="https://github.com/$REPO_SPEC/commits?after=$SHA+$OFFSET"
+open $URL
