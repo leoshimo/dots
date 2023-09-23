@@ -184,10 +184,14 @@ Delete: _o_nly  _d_elete
   ("j" windmove-down)
   ("k" windmove-up)
   ("l" windmove-right)
-  ("H" hydra-move-splitter-left)
-  ("J" hydra-move-splitter-down)
-  ("K" hydra-move-splitter-up)
-  ("L" hydra-move-splitter-right)
+
+  ("p" winner-undo)
+  ("n" 'winner-redo)
+
+  ("H" (hydra-move-splitter-left 15))
+  ("J" (hydra-move-splitter-down 8))
+  ("K" (hydra-move-splitter-up 8))
+  ("L" (hydra-move-splitter-right 15))
   ("v" (lambda ()
          (interactive)
          (split-window-right)
