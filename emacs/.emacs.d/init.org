@@ -1,5 +1,16 @@
-;; Emacs Config
+#+TITLE: Emacs Configuration
+#+AUTHOR: leoshimo
+#+PROPERTY: header-args :tangle init.el :comments header
 
+* Prelude
+
+#+begin_src emacs-lisp
+;; Emacs Config
+#+end_src
+
+* Unorganized
+
+#+begin_src emacs-lisp
 (add-to-list 'load-path "~/.emacs.d/ls/")
 (load-library "straight")
 
@@ -76,3 +87,5 @@
             (lambda ()
               (interactive)
               (compile "make format")))
+
+#+end_src
