@@ -81,3 +81,7 @@
             (lambda ()
               (interactive)
               (compile "make format")))
+(define-key c-mode-map (kbd "C-c C-c C-c")
+            (lambda ()
+              (interactive)
+              (compile "make clean")))
