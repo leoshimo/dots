@@ -16,13 +16,12 @@ if [ -z "$URL" ]; then
 fi
 
 # Username + Repo specifier like "leoshimo/vrs" out of URLs like "https://github.com/leoshimo/vrs"
-REPO_SPEC=$(echo "$URL" | sed -n 's/^.*github.com\///p')
+REPO_SPEC=$(echo "$URL" | sed -n 's/^.*github.com\///p' | sed "s/\/$//")
 if [ -z "$REPO_SPEC" ]; then
     echo "error: failed to extract repo spec\n" >&2
     usage
     exit 1
 fi
-
 
 RESP=$(curl -si "https://api.github.com/repos/$REPO_SPEC/commits?per_page=1")
 COMMIT_COUNT=$(echo "$RESP" | sed -n '/^[Ll]ink:/ s/.*"next".*page=\([0-9]*\).*"last".*/\1/p')
