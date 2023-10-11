@@ -54,3 +54,12 @@ ifeq ($(OS),Darwin)
 else
 	@echo "Error: Unsupported platform for pkgs_janet" && exit 1
 endif
+
+# Elixir
+.PHONY: pkgs_elixir
+pkgs_elixir:	## Install Elixir
+ifeq ($(OS),Darwin)
+	brew install elixir
+else
+	@echo "Error: Unsupported platform for pkgs_janet" && exit 1
+endif
