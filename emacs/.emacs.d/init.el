@@ -1,5 +1,11 @@
 ;; Emacs Config
 
+;; rustic - https://github.com/brotzeit/rustic
+(use-package rustic
+  :config
+  (setq rustic-compile-backtrace 1)
+  (setq rustic-compile-directory-method 'rustic-buffer-workspace))
+
 (add-to-list 'load-path "~/.emacs.d/ls/")
 (load-library "straight")
 
@@ -15,7 +21,6 @@
 (load-library "lsp")
 (load-library "magit")
 (load-library "org")
-(load-library "rust")
 (load-library "terminal")
 (load-library "theme")
 (load-library "vertico")

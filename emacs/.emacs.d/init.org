@@ -8,6 +8,16 @@
 ;; Emacs Config
 #+end_src
 
+* Rust
+
+#+begin_src emacs-lisp
+;; rustic - https://github.com/brotzeit/rustic
+(use-package rustic
+  :config
+  (setq rustic-compile-backtrace 1)
+  (setq rustic-compile-directory-method 'rustic-buffer-workspace))
+#+end_src
+
 * Unorganized
 
 #+begin_src emacs-lisp
@@ -26,7 +36,6 @@
 (load-library "lsp")
 (load-library "magit")
 (load-library "org")
-(load-library "rust")
 (load-library "terminal")
 (load-library "theme")
 (load-library "vertico")
