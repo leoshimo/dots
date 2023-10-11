@@ -21,7 +21,7 @@
   (setq org-startup-indented t)
   (with-eval-after-load 'outline
     (add-hook 'ediff-prepare-buffer-hook #'org-show-all))
-  (setq org-babel-python-command "/usr/local/Caskroom/miniconda/base/bin/python3")
+  (setq org-babel-python-command "/usr/bin/python3")
   (org-babel-do-load-languages 'org-babel-load-languages
      '(
        (C . t)
