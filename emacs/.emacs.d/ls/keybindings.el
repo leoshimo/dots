@@ -32,7 +32,8 @@
    "ff" '(project-find-file :which-key "File (Project)")
    "fo" '(find-file-other-window :which-key "File (Other)")
    "fr" '(consult-recent-file :which-key "File (RecentF)")
-   "fs" '(toggle-scratch-org-other-window :which-key "Scratch")
+   "fs" '(toggle-scratch-org-other-window :which-key "Org Scratch")
+   "fS" '(toggle-scratch-other-window :which-key "Scratch")
 
    ;; gptel
    "og" '(toggle-gptel-other-window :which-key "Toggle GPT")
@@ -92,7 +93,6 @@
 
    ;; term
    "ot" '(multi-term-dedicated-toggle :which-key "toggle term")
-   "os" '(toggle-scratch-other-window :which-key "toggle scratch")
    "oT" '(multi-term :which-key "new term")
    )
 
