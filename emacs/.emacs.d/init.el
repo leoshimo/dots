@@ -1,11 +1,5 @@
 ;; Emacs Config
 
-;; rustic - https://github.com/brotzeit/rustic
-(use-package rustic
-  :config
-  (setq rustic-compile-backtrace 1)
-  (setq rustic-compile-directory-method 'rustic-buffer-workspace))
-
 (add-to-list 'load-path "~/.emacs.d/ls/")
 (load-library "straight")
 
@@ -85,3 +79,11 @@
             (lambda ()
               (interactive)
               (compile "make clean")))
+
+;; rustic - https://github.com/brotzeit/rustic
+(use-package rustic
+  :config
+  (setq rustic-compile-backtrace 1)
+  (setq rustic-compile-directory-method 'rustic-buffer-workspace)
+  ;; sensible colors in term
+  (setq rustic-ansi-faces ["black" "red2" "green3" "yellow3" "cyan2" "magenta3" "cyan3" "white"]))

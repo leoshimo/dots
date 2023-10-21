@@ -8,16 +8,6 @@
 ;; Emacs Config
 #+end_src
 
-* Rust
-
-#+begin_src emacs-lisp
-;; rustic - https://github.com/brotzeit/rustic
-(use-package rustic
-  :config
-  (setq rustic-compile-backtrace 1)
-  (setq rustic-compile-directory-method 'rustic-buffer-workspace))
-#+end_src
-
 * Unorganized
 
 #+begin_src emacs-lisp
@@ -101,4 +91,16 @@
               (interactive)
               (compile "make clean")))
 
+#+end_src
+
+* Rust
+
+#+begin_src emacs-lisp
+;; rustic - https://github.com/brotzeit/rustic
+(use-package rustic
+  :config
+  (setq rustic-compile-backtrace 1)
+  (setq rustic-compile-directory-method 'rustic-buffer-workspace)
+  ;; sensible colors in term
+  (setq rustic-ansi-faces ["black" "red2" "green3" "yellow3" "cyan2" "magenta3" "cyan3" "white"]))
 #+end_src
