@@ -71,8 +71,8 @@
    :repo "serialdev/ijanet-mode")
 )
 
-(define-derived-mode lemma-mode janet-mode "lemma")
-(add-to-list 'auto-mode-alist '("\\.ll\\'" . lemma-mode))
+(define-derived-mode lyric-mode janet-mode "lyric")
+(add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
 
 (define-key c-mode-map (kbd "C-c C-c C-r")
             (lambda ()
