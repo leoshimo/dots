@@ -15,7 +15,8 @@ run_launcher () {
 zle -N run_launcher
 bindkey '^g' run_launcher
 
-alias atl='/Users/leoshimonaka/proj/vrs/scripts/add_to_launcher_cli.sh'
+add_to_launcher () {
+    tmux popup -E /Users/leoshimonaka/proj/vrs/scripts/add_to_launcher_cli.sh
+}
 zle -N add_to_launcher
-bindkey -s '^a' 'atl\n'
-
+bindkey '^a' add_to_launcher
