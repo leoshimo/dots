@@ -23,7 +23,7 @@ window:
     y: 8
   dynamic_padding: false
   decorations: none
-  startup_mode: Maximized
+  # startup_mode: Maximized
   option_as_alt: OnlyLeft
 
 scrolling:
