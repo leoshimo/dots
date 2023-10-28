@@ -13,7 +13,7 @@ ifeq ($(ARCH),arm)
 endif
 
 .PHONY: pkgs_macos_all
-pkgs_macos_all: pkgs_macos_core pkgs_macos_apps pkgs_fzf
+pkgs_macos_all: pkgs_macos_core pkgs_macos_apps pkgs_fzf pkgs_skhd
 
 $(BREW_BIN):
 	[ -f $(BREW_BIN) ] || \
@@ -29,5 +29,11 @@ pkgs_macos_apps: $(BREW_BIN)
 
 .PHONY: pkgs_fzf
 pkgs_fzf: $(BREW_BIN)
-	# Brew-specific installation
+	# Brew-specific extra steps
 	[ -f $(HOME)/.fzf.zsh ] || ($(BREW_PREFIX)/opt/fzf/install; rm ~/.fzf.bash)
+
+.PHONY: pkgs_skhd
+pkgs_skhd: $(BREW_BIN)
+	# Install / Start skhd
+	[ -f $(HOME)/Library/LaunchAgents/com.koekeishiya.skhd.plist ] || (skhd --install-service)
+	pgrep -qx "skhd" || skhd --start-service
