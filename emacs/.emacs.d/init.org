@@ -93,6 +93,13 @@
 
 #+end_src
 
+* YAML
+[[https://github.com/yoshiki/yaml-mode][yaml-mode]]
+
+#+begin_src emacs-lisp
+(use-package yaml-mode)
+#+end_src
+
 * Rust
 
 #+begin_src emacs-lisp

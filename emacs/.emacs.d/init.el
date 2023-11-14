@@ -80,6 +80,8 @@
               (interactive)
               (compile "make clean")))
 
+(use-package yaml-mode)
+
 ;; rustic - https://github.com/brotzeit/rustic
 (use-package rustic
   :config
