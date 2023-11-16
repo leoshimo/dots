@@ -10,13 +10,15 @@ export PATH="$PATH:/Users/leoshimonaka/.local/bin"
 
 # Temp Bindings!
 run_launcher () {
-    tmux popup -E /Users/leoshimonaka/proj/vrs/scripts/launcher_cli.sh
+    tmux popup -h 80% -w 80% \
+         -E /Users/leoshimonaka/proj/vrs/scripts/launcher_cli.sh
 }
 zle -N run_launcher
 bindkey '^g' run_launcher
 
 add_to_launcher () {
-    tmux popup -E /Users/leoshimonaka/proj/vrs/scripts/add_to_launcher_cli.sh
+    tmux popup -h 80% -w 80% \
+         -E /Users/leoshimonaka/proj/vrs/scripts/add_to_launcher_cli.sh
 }
 zle -N add_to_launcher
 bindkey '^a' add_to_launcher
