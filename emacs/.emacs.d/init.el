@@ -89,3 +89,21 @@
   (setq rustic-compile-directory-method 'rustic-buffer-workspace)
   ;; sensible colors in term
   (setq rustic-ansi-faces ["black" "red2" "green3" "yellow3" "cyan2" "magenta3" "cyan3" "white"]))
+
+;; -*- lexical-binding: t -*-
+
+(use-package elfeed
+  :bind (("C-x w" . elfeed))
+  :config
+  (setq elfeed-curl-program-name "curl")
+  (setq elfeed-feeds
+        '("https://lobste.rs"
+          ("https://lobste.rs/t/rust.rss" rust)
+          ("https://lobste.rs/t/elixir.rss" elixir)
+          ("https://karthinks.com/index.xml" emacs)
+          ("https://planet.emacslife.com/atom.xml" emacs))))
+
+;; (setq elfeed-show-entry-switch #'elfeed-display-buffer)
+;; (defun elfeed-display-buffer (buf &optional act)
+;;   (pop-to-buffer buf)
+;;   (set-window-text-height (get-buffer-window) (round (* 0.7 (frame-height)))))
