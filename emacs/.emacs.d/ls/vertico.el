@@ -19,6 +19,8 @@
   :init
   (vertico-mode)
   :bind (:map vertico-map
+              ("{" . #'vertico-previous-group)
+              ("}" . #'vertico-next-group)
               ("C-f" . #'vertico-scroll-up)
               ("C-b" . #'vertico-scroll-down))
   :custom
