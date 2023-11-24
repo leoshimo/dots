@@ -90,6 +90,10 @@
   ;; sensible colors in term
   (setq rustic-ansi-faces ["black" "red2" "green3" "yellow3" "cyan2" "magenta3" "cyan3" "white"]))
 
+(use-package wgrep
+  :config
+  (require 'wgrep))
+
 ;; -*- lexical-binding: t -*-
 
 (use-package elfeed
