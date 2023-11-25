@@ -111,3 +111,27 @@
 ;; (defun elfeed-display-buffer (buf &optional act)
 ;;   (pop-to-buffer buf)
 ;;   (set-window-text-height (get-buffer-window) (round (* 0.7 (frame-height)))))
+
+;; Auto Link Title
+;; From https://gist.github.com/jmn/34cd4205fa30ccf83f94cb1bc0198f3f
+(defun leoshimo/url-get-title (url &optional descr)
+  "Takes a URL and returns the value of the <title> HTML tag,
+   Thanks to https://frozenlock.org/tag/url-retrieve/ for documenting url-retrieve"
+  (let ((buffer (url-retrieve-synchronously url))
+        (title nil))
+    (save-excursion
+      (set-buffer buffer)
+      (goto-char (point-min))
+      (search-forward-regexp "<title>\\([^<]+?\\)</title>")	
+      (setq title (match-string 1 ) )
+      (kill-buffer (current-buffer)))
+    title))
+(setq org-make-link-description-function 'leoshimo/url-get-title)
+
+;; (use-package smartparens
+;;   :hook (prog-mode text-mode markdown-mode)
+;;   :config (require 'smartparens-config))
+
+;; (use-package evil-smartparens
+;;   :config
+;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))

@@ -163,3 +163,47 @@
 =+unread !x?emacs= - only unread w/o =emacs= or =xemacs= in title
 
 =+emacs =http://example.org/feed/= - entries tagged =emacs= from specific feed
+
+* org
+
+
+#+begin_src emacs-lisp
+;; Auto Link Title
+;; From https://gist.github.com/jmn/34cd4205fa30ccf83f94cb1bc0198f3f
+(defun leoshimo/url-get-title (url &optional descr)
+  "Takes a URL and returns the value of the <title> HTML tag,
+   Thanks to https://frozenlock.org/tag/url-retrieve/ for documenting url-retrieve"
+  (let ((buffer (url-retrieve-synchronously url))
+        (title nil))
+    (save-excursion
+      (set-buffer buffer)
+      (goto-char (point-min))
+      (search-forward-regexp "<title>\\([^<]+?\\)</title>")	
+      (setq title (match-string 1 ) )
+      (kill-buffer (current-buffer)))
+    title))
+(setq org-make-link-description-function 'leoshimo/url-get-title)
+#+end_src
+
+* smartparens
+
+[[https://github.com/Fuco1/smartparens][GitHub - Fuco1/smartparens: Minor mode for Emacs that deals with parens pairs and tries to be smart about it.]]
+
+#+begin_src emacs-lisp
+;; (use-package smartparens
+;;   :hook (prog-mode text-mode markdown-mode)
+;;   :config (require 'smartparens-config))
+#+end_src
+
+* evil
+
+** evil-smartparens
+
+[[https://github.com/expez/evil-smartparens][GitHub - expez/evil-smartparens: Evil integration for Smartparens]]
+
+#+begin_src emacs-lisp
+;; (use-package evil-smartparens
+;;   :config
+;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
+#+end_src
+
