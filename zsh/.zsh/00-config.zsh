@@ -7,8 +7,8 @@ export TERM='xterm-256color'
 
 ## Paths
 path=(
-  /opt/homebrew/bin
   $HOME/.cargo/bin
+  /opt/homebrew/bin
   $HOME/dots/bin
   $path
 )
