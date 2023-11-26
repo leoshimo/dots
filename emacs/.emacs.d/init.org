@@ -164,6 +164,17 @@
 
 =+emacs =http://example.org/feed/= - entries tagged =emacs= from specific feed
 
+* HTML Utils
+
+#+begin_src emacs-lisp
+;; Decode HTML entities
+(defun leoshimo/html-decode-entities (html)
+  "Decode given HTML entities into strings into entities"
+  (with-temp-buffer
+    (save-excursion (insert html))
+    (decode-coding-string (xml-parse-string) 'utf-8)))
+#+end_src
+
 * org
 
 
@@ -179,10 +190,12 @@
       (set-buffer buffer)
       (goto-char (point-min))
       (search-forward-regexp "<title>\\([^<]+?\\)</title>")	
-      (setq title (match-string 1 ) )
+      (setq title (leoshimo/html-decode-entities (match-string 1)))
       (kill-buffer (current-buffer)))
     title))
+
 (setq org-make-link-description-function 'leoshimo/url-get-title)
+
 #+end_src
 
 * smartparens

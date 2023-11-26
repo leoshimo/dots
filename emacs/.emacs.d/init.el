@@ -112,6 +112,13 @@
 ;;   (pop-to-buffer buf)
 ;;   (set-window-text-height (get-buffer-window) (round (* 0.7 (frame-height)))))
 
+;; Decode HTML entities
+(defun leoshimo/html-decode-entities (html)
+  "Decode given HTML entities into strings into entities"
+  (with-temp-buffer
+    (save-excursion (insert html))
+    (decode-coding-string (xml-parse-string) 'utf-8)))
+
 ;; Auto Link Title
 ;; From https://gist.github.com/jmn/34cd4205fa30ccf83f94cb1bc0198f3f
 (defun leoshimo/url-get-title (url &optional descr)
@@ -123,9 +130,10 @@
       (set-buffer buffer)
       (goto-char (point-min))
       (search-forward-regexp "<title>\\([^<]+?\\)</title>")	
-      (setq title (match-string 1 ) )
+      (setq title (leoshimo/html-decode-entities (match-string 1)))
       (kill-buffer (current-buffer)))
     title))
+
 (setq org-make-link-description-function 'leoshimo/url-get-title)
 
 ;; (use-package smartparens
