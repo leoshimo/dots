@@ -164,6 +164,18 @@
 
 =+emacs =http://example.org/feed/= - entries tagged =emacs= from specific feed
 
+* Dired
+
+#+begin_src emacs-lisp
+(setq dired-auto-revert-buffer t)
+#+end_src
+
+* Magit
+
+#+begin_src emacs-lisp
+(setq magit-save-repository-buffers 'dontask)
+#+end_src
+
 * HTML Utils
 
 #+begin_src emacs-lisp

@@ -112,6 +112,10 @@
 ;;   (pop-to-buffer buf)
 ;;   (set-window-text-height (get-buffer-window) (round (* 0.7 (frame-height)))))
 
+(setq dired-auto-revert-buffer t)
+
+(setq magit-save-repository-buffers 'dontask)
+
 ;; Decode HTML entities
 (defun leoshimo/html-decode-entities (html)
   "Decode given HTML entities into strings into entities"
