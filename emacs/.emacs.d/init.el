@@ -146,9 +146,10 @@
 
 (defun leoshimo/cogni-on-region (start end prompt replace)
   "Run cogni on region. Prefix arg means replace region, instead of separate output buffer"
-     (interactive "r\nsPrompt: \nP")
-     (shell-command-on-region start end "cogni" nil replace))
-
+  (interactive "r\nsPrompt: \nP")
+  (shell-command-on-region start end
+                           (format "cogni -s \"%s\"" prompt)
+                           nil replace))
 (global-set-key (kbd "M-c") #'leoshimo/cogni-on-region)
 
 ;; (use-package evil-smartparens
