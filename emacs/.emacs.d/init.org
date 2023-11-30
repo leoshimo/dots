@@ -220,6 +220,19 @@
 ;;   :config (require 'smartparens-config))
 #+end_src
 
+* cogni
+
+Emacs bindings for [[https://github.com/leoshimo/cogni][cogni]]
+
+#+begin_src emacs-lisp
+(defun leoshimo/cogni-on-region (start end prompt replace)
+  "Run cogni on region. Prefix arg means replace region, instead of separate output buffer"
+     (interactive "r\nsPrompt: \nP")
+     (shell-command-on-region start end "cogni" nil replace))
+
+(global-set-key (kbd "M-c") #'leoshimo/cogni-on-region)
+#+end_src
+
 * evil
 
 ** evil-smartparens

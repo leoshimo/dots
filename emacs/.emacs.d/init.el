@@ -144,6 +144,13 @@
 ;;   :hook (prog-mode text-mode markdown-mode)
 ;;   :config (require 'smartparens-config))
 
+(defun leoshimo/cogni-on-region (start end prompt replace)
+  "Run cogni on region. Prefix arg means replace region, instead of separate output buffer"
+     (interactive "r\nsPrompt: \nP")
+     (shell-command-on-region start end "cogni" nil replace))
+
+(global-set-key (kbd "M-c") #'leoshimo/cogni-on-region)
+
 ;; (use-package evil-smartparens
 ;;   :config
 ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
