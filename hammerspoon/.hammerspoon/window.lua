@@ -15,7 +15,7 @@ windowManager:bindHotkeys({
   fullscreen  = {HYPER, "c"},
 })
 
-windowManager.sizes = {2, 3, 4, 4/3}
+windowManager.sizes = {2, 3, 4, 3/2, 4/3}
 
 -- Given a window, move it to the next screen preserving ratio
 local moveWindowToNextScreen = function(win)

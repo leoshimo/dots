@@ -192,7 +192,7 @@
 
 #+begin_src emacs-lisp
 ;; Auto Link Title
-;; From https://gist.github.com/jmn/34cd4205fa30ccf83f94cb1bc0198f3f
+;; Adapted from https://gist.github.com/jmn/34cd4205fa30ccf83f94cb1bc0198f3f
 (defun leoshimo/url-get-title (url &optional descr)
   "Takes a URL and returns the value of the <title> HTML tag,
    Thanks to https://frozenlock.org/tag/url-retrieve/ for documenting url-retrieve"
