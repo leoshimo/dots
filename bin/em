@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# em - Hassle Free Emacs
+# Adapted from https://www.emacswiki.org/emacs/EmacsClient#h5o-17
+
+args=""
+
+# if 'em -' open standard input (e.g. pipe)
+if [[ "$1" == "-" ]]; then
+    TMP="$(mktemp /tmp/emacsstdin-XXX)"
+    cat >$TMP
+    args=($args --eval '(let ((b (generate-new-buffer "*stdin*"))) (switch-to-buffer b) (insert-file-contents "'${TMP}'") (delete-file "'${TMP}'"))')
+else
+    args=($@ $args)
+fi
+
+emacsclient --alternate-editor="" --tty --create-frame "${args[@]}"

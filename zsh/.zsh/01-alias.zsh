@@ -11,7 +11,7 @@ alias g='git'
 alias v="vim"
 
 # Emacs
-alias em='emacsclient --create-frame --alternate-editor="" -nw'
+# alias em='emacsclient --create-frame --alternate-editor="" -nw' - replaced by bin/em
 alias emk="pkill -USR2 emacs;  emacsclient -t -e '(save-buffers-kill-emacs)'"
 
 # tmux
