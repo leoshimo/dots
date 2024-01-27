@@ -156,7 +156,7 @@
 
   (defhydra hydra-toggle (:hint nil :color blue :columns 1)
     "TOGGLE"
-    ("f" flycheck-mode "flycheck")
+    ("f" follow-mode "follow-mode")
     ("s" flyspell-mode "flyspell")
     ("l" toggle-truncate-lines "Truncate Lines")
     ("t" modus-themes-toggle "Toggle Theme")
