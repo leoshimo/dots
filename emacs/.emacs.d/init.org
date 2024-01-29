@@ -331,3 +331,9 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
 #+end_src
 
+
+* Apple
+
+#+begin_src emacs-lisp
+(use-package swift-mode)
+#+end_src

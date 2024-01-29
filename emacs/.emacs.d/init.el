@@ -124,7 +124,7 @@
     (decode-coding-string (xml-parse-string) 'utf-8)))
 
 ;; Auto Link Title
-;; From https://gist.github.com/jmn/34cd4205fa30ccf83f94cb1bc0198f3f
+;; Adapted from https://gist.github.com/jmn/34cd4205fa30ccf83f94cb1bc0198f3f
 (defun leoshimo/url-get-title (url &optional descr)
   "Takes a URL and returns the value of the <title> HTML tag,
    Thanks to https://frozenlock.org/tag/url-retrieve/ for documenting url-retrieve"
@@ -228,3 +228,5 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 ;; (use-package evil-smartparens
 ;;   :config
 ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
+
+(use-package swift-mode)
