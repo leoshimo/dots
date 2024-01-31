@@ -12,6 +12,7 @@ cask "kindle"
 cask "raycast"
 cask "sublime-text"
 cask "homebrew/cask/docker"
+cask "tailscale"
 
 tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
