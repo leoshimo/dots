@@ -34,6 +34,7 @@
    "fr" '(consult-recent-file :which-key "File (RecentF)")
    "fs" '(toggle-scratch-org-other-window :which-key "Org Scratch")
    "fS" '(toggle-scratch-other-window :which-key "Scratch")
+   "fl" '(toggle-log-org-other-window :which-key "Org Log")
 
    ;; gptel
    "og" '(toggle-gptel-other-window :which-key "Toggle GPT")
@@ -274,6 +275,15 @@ Delete: _o_nly  _d_elete
   "Toggle the scratch org buffer in other window"
   (interactive)
   (let* ((filepath "~/proj/org/scratch.org")
+         (buf (find-buffer-visiting filepath)))
+    (if (and buf (get-buffer-window buf))
+        (delete-window (get-buffer-window buf))
+        (find-file-other-window filepath))))
+
+(defun toggle-log-org-other-window ()
+  "Toggle the log org buffer in other window"
+  (interactive)
+  (let* ((filepath "~/proj/org/log.org")
          (buf (find-buffer-visiting filepath)))
     (if (and buf (get-buffer-window buf))
         (delete-window (get-buffer-window buf))
