@@ -60,8 +60,6 @@
 )
 (use-package janet-mode)
 
-(define-derived-mode lyric-mode janet-mode "lyric")
-(add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
 
 (define-key c-mode-map (kbd "C-c C-c C-r")
             (lambda ()
@@ -230,3 +228,34 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
 
 (use-package swift-mode)
+
+(defun lyric-eval-buffer ()
+  "Evaluates contents of current buffer"
+  (interactive)
+  (shell-command-on-region (point-min) (point-max) "vrsctl"))
+
+(defun lyric-eval-last-sexp (insert)
+  "Evaluates last sexp. Prefix arg inserts output into current buffer."
+  (interactive "P")
+  (let* ((arg (shell-quote-argument (prin1-to-string (pp-last-sexp))))
+         (cmd (format "vrsctl --command %s" arg)))
+    (if insert
+        (insert (shell-command-to-string cmd))
+        (shell-command cmd))))
+
+(defun lyric-eval-region (start end replace)
+  "Evaluates contents of region"
+  (interactive "r\nP")
+  (shell-command-on-region start end
+                           "vrsctl"
+                           nil replace))
+
+(defvar-keymap lyric-mode-map
+  "C-c C-c" #'lyric-eval-buffer
+  "C-c C-e" #'lyric-eval-last-sexp
+  "C-c C-r" #'lyric-eval-region)
+
+(define-derived-mode lyric-mode janet-mode "lyric"
+  "Major mode for Lyric lang")
+
+(add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
