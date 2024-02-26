@@ -234,14 +234,17 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   (interactive)
   (shell-command-on-region (point-min) (point-max) "vrsctl"))
 
-(defun lyric-eval-last-sexp (insert)
-  "Evaluates last sexp. Prefix arg inserts output into current buffer."
+(defun lyric-eval-last-sexp (replace)
+  "Evaluates last sexp. Prefix arg replaces output into current buffer."
   (interactive "P")
   (let* ((arg (shell-quote-argument (prin1-to-string (pp-last-sexp))))
          (cmd (format "vrsctl --command %s" arg)))
-    (if insert
-        (insert (shell-command-to-string cmd))
-        (shell-command cmd))))
+    (if replace
+        (progn (save-excursion
+                 (forward-char)
+                 (backward-kill-sexp)
+                 (insert (string-trim (shell-command-to-string cmd)))))
+      (shell-command cmd))))
 
 (defun lyric-eval-region (start end replace)
   "Evaluates contents of region"
