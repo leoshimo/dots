@@ -229,10 +229,12 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 
 (use-package swift-mode)
 
-(defun lyric-eval-buffer ()
+(defun lyric-eval-buffer (editor_format)
   "Evaluates contents of current buffer"
-  (interactive)
-  (shell-command-on-region (point-min) (point-max) "vrsctl"))
+  (interactive "P")
+  (if editor_format
+      (shell-command-on-region (point-min) (point-max) "vrsctl --format=editor")
+      (shell-command-on-region (point-min) (point-max) "vrsctl")))
 
 (defun lyric-eval-last-sexp (replace)
   "Evaluates last sexp. Prefix arg replaces output into current buffer."
