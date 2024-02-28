@@ -233,14 +233,14 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   "Evaluates contents of current buffer"
   (interactive "P")
   (if editor_format
-      (shell-command-on-region (point-min) (point-max) "vrsctl --format=editor")
-      (shell-command-on-region (point-min) (point-max) "vrsctl")))
+      (shell-command-on-region (point-min) (point-max) "vrsctl --name editor --format editor")
+      (shell-command-on-region (point-min) (point-max) "vrsctl --name editor")))
 
 (defun lyric-eval-last-sexp (replace)
   "Evaluates last sexp. Prefix arg replaces output into current buffer."
   (interactive "P")
   (let* ((arg (shell-quote-argument (prin1-to-string (pp-last-sexp))))
-         (cmd (format "vrsctl --command %s" arg)))
+         (cmd (format "vrsctl --name editor --command %s" arg)))
     (if replace
         (progn (save-excursion
                  (forward-char)
@@ -252,7 +252,7 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   "Evaluates contents of region"
   (interactive "r\nP")
   (shell-command-on-region start end
-                           "vrsctl"
+                           "vrsctl --name editor"
                            nil replace))
 
 (defvar-keymap lyric-mode-map
