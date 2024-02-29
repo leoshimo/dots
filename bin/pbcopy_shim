@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# pbcopy_shim - Shim to plumb argument as stdin into pbcopy
+#
+
+CONTENTS="$1"
+echo "$CONTENTS" | pbcopy
