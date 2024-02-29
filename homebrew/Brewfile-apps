@@ -13,6 +13,7 @@ cask "raycast"
 cask "sublime-text"
 cask "homebrew/cask/docker"
 cask "tailscale"
+cask "ubersicht"
 
 tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
