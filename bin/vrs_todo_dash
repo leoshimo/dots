@@ -2,14 +2,5 @@
 # vrs_dash - Quick VRS Dashboard
 #
 
-
-vrsctl -c '(spawn (fn ()
-        (try (kill (find_srv :vrs_dash_watcher)))
-        (register :vrs_dash_watcher)
-        (subscribe :todos_event)
-        (recv)
-        (try (exec "osascript" "-e" "tell application id \"tracesOf.Uebersicht\" to refresh widget id \"vrs_todo_dash-jsx\""))))' >/dev/null
-
 vrsctl -c "(begin (bind_srv :todos) (map (get_todos) (fn (t) (get t :title))))" \
     | sed -e "s/[\(|\)]//g" -e "s/ \"/\n/g" -e "s/\"//g"
-
