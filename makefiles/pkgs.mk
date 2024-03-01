@@ -46,6 +46,7 @@ pkgs_rust:		## Install packages for Rust Development
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	rustup component add rust-analyzer
 	cargo install cargo-edit # for cargo upgrade
+	cargo install cargo-audit
 
 # Janet
 .PHONY: pkgs_janet
