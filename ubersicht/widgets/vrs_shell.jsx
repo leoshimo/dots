@@ -95,12 +95,15 @@ box-sizing: border-box;
     height: 10px;
     border-radius: 20px;
     border-style: solid;
-    border-color: rgba(255,255,255,0.5);
-    border-color: #E09203;
+    border-color: mediumseagreen;
     background: rgba(0,0,0,0.2);
     background: transparent;
     left: 0px;
     margin-top: 3px;
+}
+
+.task--rlist::before {
+    border-color: #E09203;
 }
 
 .task .title {
@@ -147,7 +150,7 @@ export const render = ({output}) => {
         );
     } else {
         rlist_elems = rlist.map((it) => (
-            <div key={idx++} class="task">
+            <div key={idx++} class="task task--rlist">
                 <div class="leftBox">
                 </div>
                 <div class="rightBox">
