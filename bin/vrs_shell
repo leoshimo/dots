@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+# vrs_shell - VRS Desktop Shell Script
+#
+
+vrsctl -c "(begin (bind_srv :todos) (map (get_todos) (fn (t) (get t :title))))" \
+    | sed -e "s/[\(|\)]//g" -e "s/ \"/\n/g" -e "s/\"//g"
+
+echo "<SEP>"
+
+vrsctl -c "(begin (bind_srv :rlist) (map (get_rlist) (fn (t) (get t :title))))" \
+    | sed -e "s/[\(|\)]//g" -e "s/ \"/\n/g" -e "s/\"//g"
+

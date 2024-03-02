@@ -5,7 +5,7 @@
 import { run } from 'uebersicht'
 
 // this is the shell command that gets executed every time this widget refreshes
-export const command = '~/dots/bin/vrs_todo_dash';
+export const command = '~/dots/bin/vrs_shell';
 
 // the refresh frequency in milliseconds
 export const refreshFrequency = 5000;
@@ -22,10 +22,9 @@ box-sizing: border-box;
 
 .container {
     border-radius: 10px;
-    -webkit-backdrop-filter: blur(20px);
-    width: 450px;
+    width: 300px;
     padding-top: 40px;
-    height: 200px;
+    height: 300px;
 
     position: fixed;
     bottom: 20px;
@@ -34,7 +33,7 @@ box-sizing: border-box;
     padding: 10px;
     -webkit-box-shadow: 10px 10px 47px 0px rgba(0,0,0,0.54);
     letter-spacing: 1px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.8);
     color: black;
 }
 
@@ -46,6 +45,7 @@ box-sizing: border-box;
 .taskBox {
     display: flex;
     flex-direction: column;
+    min-height: 140px;
 }
 
 .header h2 {
@@ -61,7 +61,8 @@ box-sizing: border-box;
 
 .nothing {
     text-align: center;
-    margin-top: 55px;
+    height: 50px;
+    margin-top: 45px;
 }
 
 .task {
@@ -88,21 +89,24 @@ box-sizing: border-box;
     font-size: 16px;
     font-weight: 500;
     margin-left: 8px;
+    margin-bottom: 8px;
 }
-
 `
 
 // render gets called after the shell command has executed. The command's output
 // is passed in as a string.
 export const render = ({output}) => {
-    const todos = output.split('\n').filter((s) => s.length > 0);
+
+    const [todos_str, rlist_str] = output.split("<SEP>");
+    const todos = todos_str.split('\n').filter((s) => s.length > 0);
+    const rlist = rlist_str.split('\n').filter((s) => s.length > 0);
 
     let idx = 0;
-    let todo_elems;
 
+    let todo_elems;
     if (todos.length === 0) {
         todo_elems = (
-            <div class='nothing'>No tasks</div>
+            <div class='nothing'>No Tasks</div>
         );
     } else {
         todo_elems = todos.map((it) => (
@@ -118,6 +122,26 @@ export const render = ({output}) => {
         ));
     }
 
+    let rlist_elems;
+    if (rlist.length === 0) {
+        rlist_elems = (
+            <div class='nothing'>No Links</div>
+        );
+    } else {
+        rlist_elems = rlist.map((it) => (
+            <div key={idx++} class="task">
+                <div class="leftBox">
+                </div>
+                <div class="rightBox">
+                    <div class="title">
+                        {it}
+                    </div>
+                </div>
+            </div>
+        ));
+    }
+
+
     return (
         <div class="container">
             <div class="mainBox">
@@ -127,6 +151,13 @@ export const render = ({output}) => {
                     </div>
                     <div class="separator"></div>
                     {todo_elems}
+                </div>
+                <div class="taskBox">
+                    <div class='header'>
+                        <h2>Reading List</h2>
+                    </div>
+                    <div class="separator"></div>
+                    {rlist_elems}
                 </div>
             </div>
         </div>
