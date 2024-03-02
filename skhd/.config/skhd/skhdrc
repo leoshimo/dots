@@ -6,7 +6,7 @@
 # - https://github.com/koekeishiya/skhd/issues/1
 
 # cmd - space [
-#     "alacritty" : tmux popup -h 80% -w 80% -E /Users/leoshimonaka/proj/vrs/scripts/launcher_cli.sh
+#     "alacritty" : tmux popup -h 80% -w 80% -E /Users/leoshimonaka/proj/vrs/scripts/vrsjmp_cli.sh
 #     * : alacritty msg create-window \
-#         -e zsh -ic /Users/leoshimonaka/proj/vrs/scripts/launcher_cli.sh; osascript -e 'activate application "Alacritty"' 
+#         -e zsh -ic /Users/leoshimonaka/proj/vrs/scripts/vrsjmp_cli.sh; osascript -e 'activate application "Alacritty"' 
 # ]
