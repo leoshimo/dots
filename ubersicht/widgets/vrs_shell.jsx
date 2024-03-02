@@ -8,7 +8,7 @@ import { run } from 'uebersicht'
 export const command = '~/dots/bin/vrs_shell';
 
 // the refresh frequency in milliseconds
-export const refreshFrequency = 5000;
+export const refreshFrequency = false;
 
 // the CSS style for this widget, written using Emotion
 // https://emotion.sh/
@@ -19,6 +19,20 @@ font-weight: 400;
 font-size: 14px;
 
 box-sizing: border-box;
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray4);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
 
 .container {
     border-radius: 10px;
@@ -38,8 +52,12 @@ box-sizing: border-box;
 }
 
 .mainBox {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .taskBox {
