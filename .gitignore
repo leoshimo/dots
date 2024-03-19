@@ -1,6 +1,10 @@
 # vim
 vim/.vim/vimplug
 
+# emacs
+emacs/.emacs.d/data
+emacs/.emacs.d/straight
+
 # tpm
 tmux/.tmux/plugins
 
