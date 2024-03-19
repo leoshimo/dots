@@ -34,7 +34,7 @@ prefs_textedit:
 
 .PHONY: prefs_safari
 prefs_safari:
-	defaults write com.apple.Safari ShowFullURLInSmartSearchField 1 			# Show full url
+	# defaults write com.apple.Safari ShowFullURLInSmartSearchField 1 			# Show full url
 
 .PHONY: prefs_xcode
 prefs_xcode:
