@@ -2,37 +2,37 @@
   "entries": {
     "cask": {
       "1password": {
-        "version": "8.10.18",
+        "version": "8.10.27",
         "options": {
           "full_name": "1password"
         }
       },
       "alacritty": {
-        "version": "0.12.3",
+        "version": "0.13.1",
         "options": {
           "full_name": "alacritty"
         }
       },
       "cron": {
-        "version": "1.115.0",
+        "version": null,
         "options": {
           "full_name": "cron"
         }
       },
       "dash": {
-        "version": "7.1.5",
+        "version": "7.2.1",
         "options": {
           "full_name": "dash"
         }
       },
       "dropbox": {
-        "version": "185.4.6054",
+        "version": "194.4.6267",
         "options": {
           "full_name": "dropbox"
         }
       },
       "google-chrome": {
-        "version": "118.0.5993.117",
+        "version": "122.0.6261.129",
         "options": {
           "full_name": "google-chrome"
         }
@@ -50,27 +50,45 @@
         }
       },
       "raycast": {
-        "version": "1.60.1",
+        "version": "1.69.3",
         "options": {
           "full_name": "raycast"
         }
       },
       "sublime-text": {
-        "version": "4152",
+        "version": "4169",
         "options": {
           "full_name": "sublime-text"
         }
       },
       "firefox": {
-        "version": "119.0",
+        "version": "123.0.1",
         "options": {
           "full_name": "firefox"
         }
       },
       "docker": {
-        "version": "4.25.0,126437",
+        "version": "4.28.0,139021",
         "options": {
           "full_name": "homebrew/cask/docker"
+        }
+      },
+      "macdown": {
+        "version": "0.7.2",
+        "options": {
+          "full_name": "macdown"
+        }
+      },
+      "tailscale": {
+        "version": "1.62.0",
+        "options": {
+          "full_name": "tailscale"
+        }
+      },
+      "ubersicht": {
+        "version": "1.6.82",
+        "options": {
+          "full_name": "ubersicht"
         }
       }
     },
@@ -141,11 +159,11 @@
       },
       "Spark": {
         "id": "1176895641",
-        "version": "2.11.30"
+        "version": "2.11.38"
       },
       "Things": {
         "id": "904280696",
-        "version": "3.17.8"
+        "version": "3.20.3"
       }
     },
     "tap": {
@@ -163,6 +181,14 @@
         "CLT": "14.3.1.0.1.1683849156",
         "Xcode": "14.3",
         "macOS": "13.4"
+      },
+      "sonoma": {
+        "HOMEBREW_VERSION": "4.2.13",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "15.3.0.0.1.1708646388",
+        "Xcode": "15.3",
+        "macOS": "14.1"
       }
     }
   }
