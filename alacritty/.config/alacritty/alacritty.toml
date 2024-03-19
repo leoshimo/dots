@@ -1,0 +1,26 @@
+live_config_reload = true
+
+[font]
+size = 12.0
+
+[font.bold]
+style = "Bold"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Fira Mono for Powerline"
+style = "Regular"
+
+[scrolling]
+history = 100000
+
+[window]
+decorations = "none"
+dynamic_padding = false
+option_as_alt = "OnlyLeft"
+
+[window.padding]
+x = 8
+y = 8
