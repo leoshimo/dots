@@ -15,6 +15,7 @@ cask "raycast"
 cask "sublime-text"
 cask "tailscale"
 cask "ubersicht"
+cask "xcodes"
 
 tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
