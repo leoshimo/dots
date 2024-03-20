@@ -2,7 +2,7 @@
   "entries": {
     "cask": {
       "1password": {
-        "version": "8.10.27",
+        "version": "8.10.28",
         "options": {
           "full_name": "1password"
         }
@@ -32,7 +32,7 @@
         }
       },
       "google-chrome": {
-        "version": "122.0.6261.129",
+        "version": "123.0.6312.59",
         "options": {
           "full_name": "google-chrome"
         }
@@ -50,7 +50,7 @@
         }
       },
       "raycast": {
-        "version": "1.69.3",
+        "version": "1.70.0",
         "options": {
           "full_name": "raycast"
         }
@@ -62,7 +62,7 @@
         }
       },
       "firefox": {
-        "version": "123.0.1",
+        "version": "124.0",
         "options": {
           "full_name": "firefox"
         }
@@ -89,6 +89,18 @@
         "version": "1.6.82",
         "options": {
           "full_name": "ubersicht"
+        }
+      },
+      "notion-calendar": {
+        "version": "1.119.0,24020864o7qbuof",
+        "options": {
+          "full_name": "notion-calendar"
+        }
+      },
+      "xcodes": {
+        "version": "2.1.2b26",
+        "options": {
+          "full_name": "xcodes"
         }
       }
     },
@@ -159,11 +171,11 @@
       },
       "Spark": {
         "id": "1176895641",
-        "version": "2.11.38"
+        "version": "2.11.30"
       },
       "Things": {
         "id": "904280696",
-        "version": "3.20.3"
+        "version": "3.17.8"
       }
     },
     "tap": {
@@ -183,12 +195,12 @@
         "macOS": "13.4"
       },
       "sonoma": {
-        "HOMEBREW_VERSION": "4.2.13",
+        "HOMEBREW_VERSION": "4.2.14",
         "HOMEBREW_PREFIX": "/opt/homebrew",
         "Homebrew/homebrew-core": "api",
-        "CLT": "15.3.0.0.1.1708646388",
-        "Xcode": "15.3",
-        "macOS": "14.1"
+        "CLT": "14.3.1.0.1.1683849156",
+        "Xcode": "14.3",
+        "macOS": "14.4"
       }
     }
   }

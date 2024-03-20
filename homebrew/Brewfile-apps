@@ -2,7 +2,7 @@
 
 cask "1password"
 cask "alacritty"
-cask "cron"
+cask "notion-calendar"
 cask "dash"
 cask "dropbox"
 cask "firefox"
@@ -14,7 +14,6 @@ cask "macdown"
 cask "raycast"
 cask "sublime-text"
 cask "tailscale"
-cask "ubersicht"
 cask "xcodes"
 
 tap "smudge/smudge"
