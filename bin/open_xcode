@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+# open_xcode - Open active xcode (Shim for VRS)
+#
+
+XC_APP=$(xcode-select -p | grep -oE "Xcode[^/]+")
+open -a "$XC_APP"
