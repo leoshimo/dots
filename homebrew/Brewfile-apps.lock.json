@@ -176,6 +176,26 @@
       "Things": {
         "id": "904280696",
         "version": "3.17.8"
+      },
+      "1Password for Safari": {
+        "id": "1569813296",
+        "version": "2.14.0"
+      },
+      "Play": {
+        "id": "6444542118",
+        "version": "1.3.0"
+      },
+      "QuickShade": {
+        "id": "931571202",
+        "version": "3.0.1"
+      },
+      "Soulver 3": {
+        "id": "1508732804",
+        "version": "3.10"
+      },
+      "Vimari": {
+        "id": "1480933944",
+        "version": "2.1.1"
       }
     },
     "tap": {
