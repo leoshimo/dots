@@ -10,3 +10,9 @@
 #     * : alacritty msg create-window \
 #         -e zsh -ic /Users/leoshimonaka/proj/vrs/scripts/vrsjmp_cli.sh; osascript -e 'activate application "Alacritty"' 
 # ]
+
+# toggle alacritty
+ctrl - t [
+    "alacritty" : skhd -k "cmd -h"
+    * : osascript -e 'activate application "Alacritty"' 
+]
