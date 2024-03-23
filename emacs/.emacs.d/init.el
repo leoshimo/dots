@@ -110,6 +110,8 @@
 ;;   (pop-to-buffer buf)
 ;;   (set-window-text-height (get-buffer-window) (round (* 0.7 (frame-height)))))
 
+(use-package htmlize)
+
 (setq dired-auto-revert-buffer t)
 
 (setq magit-save-repository-buffers 'dontask)
