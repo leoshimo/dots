@@ -249,7 +249,7 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 (use-package swift-mode)
 
 (defvar vrsctl_base_command
-     "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser")
+     "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_window")
 
 (defun lyric-eval-buffer (editor_format)
   "Evaluates contents of current buffer"

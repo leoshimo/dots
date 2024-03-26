@@ -365,7 +365,7 @@ Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]
 
 #+begin_src emacs-lisp
 (defvar vrsctl_base_command
-     "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser")
+     "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_window")
 
 (defun lyric-eval-buffer (editor_format)
   "Evaluates contents of current buffer"

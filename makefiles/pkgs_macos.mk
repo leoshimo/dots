@@ -13,7 +13,7 @@ ifeq ($(ARCH),arm)
 endif
 
 .PHONY: pkgs_macos_all
-pkgs_macos_all: pkgs_macos_core pkgs_macos_apps pkgs_fzf pkgs_skhd
+pkgs_macos_all: pkgs_macos_core pkgs_macos_apps pkgs_fzf pkgs_skhd pkgs_yabai
 
 $(BREW_BIN):
 	[ -f $(BREW_BIN) ] || \
@@ -37,3 +37,9 @@ pkgs_skhd: $(BREW_BIN)
 	# Install / Start skhd
 	[ -f $(HOME)/Library/LaunchAgents/com.koekeishiya.skhd.plist ] || (skhd --install-service)
 	pgrep -qx "skhd" || skhd --start-service
+
+.PHONY: pkgs_yabai
+pkgs_yabai: $(BREW_BIN)
+	# Install / Start yabai
+	[ -f $(HOME)/Library/LaunchAgents/com.koekeishiya.yabai.plist ] || (yabai --install-service)
+	pgrep -qx "yabai" || yabai --start-service
