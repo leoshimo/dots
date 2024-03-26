@@ -23,6 +23,71 @@
 		<key>uninstalled</key>
 		<dict/>
 	</dict>
+	<key>DHDocsetGeneratorRepo</key>
+	<dict>
+		<key>installed</key>
+		<dict>
+			<key>HTMX</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:59:13Z</date>
+				<key>entry</key>
+				<dict>
+					<key>docsetGeneratorSettings</key>
+					<dict>
+						<key>allowFilters</key>
+						<string></string>
+						<key>basicIndexEnabled</key>
+						<true/>
+						<key>cssToInject</key>
+						<string>footer {
+    display: none !important;
+}</string>
+						<key>denyFilters</key>
+						<string></string>
+						<key>docsetKeyword</key>
+						<string>htmx</string>
+						<key>docsetName</key>
+						<string>HTMX</string>
+						<key>extraInfoPlist</key>
+						<string></string>
+						<key>isFromLocalFolder</key>
+						<false/>
+						<key>isFromWebsite</key>
+						<true/>
+						<key>javaScriptIndexEnabled</key>
+						<false/>
+						<key>javaScriptUsedToIndex</key>
+						<string>const pageTitle = $("title").text();
+dashDoc.addEntry({name: pageTitle, type: "Guide"});
+
+$("h1").each(function() {
+    const entryName = $(this).text();
+    var entryHash = $(this).attr('id');
+    if(!entryHash)
+    {
+        entryHash = entryName.replace(/\W/g, '');
+        $(this).attr('id', entryHash);
+    }
+    dashDoc.addEntry({name: entryName, type: "Section", hash: entryHash});
+});</string>
+						<key>localFolderPath</key>
+						<string></string>
+						<key>websiteURL</key>
+						<string>https://htmx.org/docs/</string>
+					</dict>
+					<key>name</key>
+					<string>HTMX</string>
+					<key>platform</key>
+					<string>Other</string>
+					<key>uniqueIdentifier</key>
+					<string>HTMX</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>uninstalled</key>
+		<dict/>
+	</dict>
 	<key>DHGitHubRepo</key>
 	<dict>
 		<key>installed</key>
@@ -101,6 +166,140 @@
 		<key>uninstalled</key>
 		<dict/>
 	</dict>
+	<key>DHRustRepo</key>
+	<dict>
+		<key>installed</key>
+		<dict>
+			<key>askama</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:57:48Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>askama</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>askama</string>
+				</dict>
+			</dict>
+			<key>axum</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-25T18:12:11Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>axum</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>axum</string>
+				</dict>
+			</dict>
+			<key>clap</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:57:39Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>clap</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>clap</string>
+				</dict>
+			</dict>
+			<key>gloo</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T22:07:55Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>gloo</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>gloo</string>
+				</dict>
+			</dict>
+			<key>minijinja</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-22T17:02:35Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>minijinja</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>minijinja</string>
+				</dict>
+			</dict>
+			<key>serde_json</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:57:57Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>serde_json</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>serde_json</string>
+				</dict>
+			</dict>
+			<key>sqlx</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:58:01Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>sqlx</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>sqlx</string>
+				</dict>
+			</dict>
+			<key>tokio</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:57:45Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>tokio</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>tokio</string>
+				</dict>
+			</dict>
+			<key>toml</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:58:06Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>toml</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>toml</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>uninstalled</key>
+		<dict/>
+	</dict>
 	<key>DHScalaRepo</key>
 	<dict>
 		<key>installed</key>
@@ -122,7 +321,7 @@
 			<key>FreeBSD_Handbook</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:02:48Z</date>
+				<date>2024-03-21T15:55:45Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -144,7 +343,7 @@
 			<key>IntelASMx86</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:02:49Z</date>
+				<date>2024-03-21T15:55:44Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -166,7 +365,7 @@
 			<key>Neovim</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:02:48Z</date>
+				<date>2024-03-21T15:55:44Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -210,109 +409,114 @@
 				<key>date</key>
 				<date>2023-08-23T20:07:56Z</date>
 			</dict>
+			<key>http://kapeli.com/feeds/Apple_API_Reference.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:57:17Z</date>
+			</dict>
 			<key>http://kapeli.com/feeds/Boost.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:37Z</date>
+				<date>2024-03-22T11:20:19Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/C++.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:04:06Z</date>
+				<date>2024-03-21T15:57:26Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/C.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:05:29Z</date>
+				<date>2024-03-21T15:56:33Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/CSS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:47Z</date>
+				<date>2024-03-21T15:56:16Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Elixir.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:20Z</date>
+				<date>2024-03-21T15:56:19Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Emacs_Lisp.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:57:07Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Emmet.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-21T15:57:30Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Erlang.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:04:18Z</date>
+				<date>2024-03-21T15:56:43Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/HTML.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:03:22Z</date>
+				<date>2024-03-21T15:57:41Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/JavaScript.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:05:01Z</date>
+				<date>2024-03-21T15:58:40Z</date>
 			</dict>
-			<key>http://kapeli.com/feeds/Java_SE16.xml</key>
+			<key>http://kapeli.com/feeds/Jinja.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:56Z</date>
-			</dict>
-			<key>http://kapeli.com/feeds/Java_SE8.xml</key>
-			<dict>
-				<key>date</key>
-				<date>2023-08-23T20:04:47Z</date>
+				<date>2024-03-21T15:56:23Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Lua_5.4.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:11Z</date>
+				<date>2024-03-21T15:56:23Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Man_Pages.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:17Z</date>
+				<date>2024-03-21T15:57:05Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/NodeJS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:10Z</date>
+				<date>2024-03-21T15:57:33Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Python_3.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:03:32Z</date>
+				<date>2024-03-21T15:58:19Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/React.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:14Z</date>
+				<date>2024-03-21T15:58:10Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Rust.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:06Z</date>
+				<date>2024-03-21T15:58:15Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Spring_Framework.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:03:08Z</date>
+				<date>2024-03-21T15:58:08Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Tcl.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:06:16Z</date>
+				<date>2024-03-21T15:58:19Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/VueJS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2023-08-23T20:05:11Z</date>
+				<date>2024-03-21T15:58:15Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>
 		<dict>
-			<key>http://kapeli.com/feeds/Apple_API_Reference.xml</key>
-			<dict>
-				<key>date</key>
-				<date>2022-01-30T03:04:11Z</date>
-			</dict>
 			<key>http://kapeli.com/feeds/Vim.xml</key>
 			<dict>
 				<key>date</key>
@@ -549,7 +753,7 @@
 		<key>keyCode</key>
 		<integer>49</integer>
 		<key>modifiers</key>
-		<integer>2048</integer>
+		<integer>4352</integer>
 	</dict>
 	<key>shouldRestoreTabs</key>
 	<true/>
