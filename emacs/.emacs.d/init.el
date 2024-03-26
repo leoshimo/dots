@@ -248,18 +248,21 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 
 (use-package swift-mode)
 
+(defvar vrsctl_base_command
+     "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser")
+
 (defun lyric-eval-buffer (editor_format)
   "Evaluates contents of current buffer"
   (interactive "P")
   (if editor_format
-      (shell-command-on-region (point-min) (point-max) "vrsctl --name editor --format editor")
-      (shell-command-on-region (point-min) (point-max) "vrsctl --name editor")))
+      (shell-command-on-region (point-min) (point-max) (concat vrsctl_base_command " --format editor"))
+    (shell-command-on-region (point-min) (point-max) vrsctl_base_command)))
 
 (defun lyric-eval-last-sexp (replace)
   "Evaluates last sexp. Prefix arg replaces output into current buffer."
   (interactive "P")
   (let* ((arg (shell-quote-argument (prin1-to-string (pp-last-sexp))))
-         (cmd (format "vrsctl --name editor --command %s" arg)))
+         (cmd (concat vrsctl_base_command (format " --command %s" arg))))
     (if replace
         (progn (save-excursion
                  (forward-char)
@@ -271,7 +274,7 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   "Evaluates contents of region"
   (interactive "r\nP")
   (shell-command-on-region start end
-                           "vrsctl --name editor"
+                           vrsctl_base_command
                            nil replace))
 
 (defvar-keymap lyric-mode-map
