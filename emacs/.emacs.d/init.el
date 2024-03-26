@@ -140,6 +140,23 @@
 
 (setq org-make-link-description-function 'leoshimo/url-get-title)
 
+;; Org CSS
+(defun eos/org-inline-css-hook (exporter)
+  "Insert custom inline css to automatically set the
+ background of code to whatever theme I'm using's background"
+  (when (eq exporter 'html)
+    (let* ((my-pre-bg (face-background 'default))
+           (my-pre-fg (face-foreground 'default)))
+      (setq
+       org-html-head-extra
+       (concat
+        org-html-head-extra
+        (format
+         "<style type=\"text/css\">\n pre.src {background-color: %s; color: %s;}</style>\n"
+         my-pre-bg my-pre-fg))))))
+
+(add-hook 'org-export-before-processing-hook #'eos/org-inline-css-hook)
+
 ;; (use-package smartparens
 ;;   :hook (prog-mode text-mode markdown-mode)
 ;;   :config (require 'smartparens-config))
