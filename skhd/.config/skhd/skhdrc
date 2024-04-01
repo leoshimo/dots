@@ -12,7 +12,7 @@
 # ]
 
 # toggle alacritty
-ctrl - t [
-    "alacritty" : skhd -k "cmd -h"
-    * : osascript -e 'activate application "Alacritty"' 
-]
+# ctrl - t [
+#     "alacritty" : skhd -k "cmd -h"
+#     * : osascript -e 'activate application "Alacritty"' 
+# ]
