@@ -14,7 +14,7 @@ cask "macdown"
 cask "raycast"
 cask "sublime-text"
 cask "tailscale"
-cask "xcodes"
+# cask "xcodes"
 
 tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
