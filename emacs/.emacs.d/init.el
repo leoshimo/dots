@@ -22,7 +22,6 @@
 (load-library "which-key")
 (load-library "project")
 (load-library "restclient")
-(load-library "ls-hideshow")
 (load-library "window")
 ;; (load-library "window-split")
 
@@ -286,3 +285,47 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   "Major mode for Lyric lang")
 
 (add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
+
+(define-key magit-status-mode-map (kbd "C-c C-p")
+            (lambda ()
+              (interactive)
+              (start-process "*gh pr create*" nil "gh" "pr" "create" "--web")))
+
+(use-package hideshow
+  :hook (rustic-mode . hs-minor-mode)
+  :config
+  (setq hs-isearch-open t))
+
+(defun hs-cycle (&optional level)
+  (interactive "p")
+  (let (message-log-max
+        (inhibit-message t))
+    (if (= level 1)
+        (pcase last-command
+          ('hs-cycle
+           (hs-hide-level 1)
+           (setq this-command 'hs-cycle-children))
+          ('hs-cycle-children
+           ;; TODO: Fix this case. `hs-show-block' needs to be
+           ;; called twice to open all folds of the parent
+           ;; block.
+           (save-excursion (hs-show-block))
+           (hs-show-block)
+           (setq this-command 'hs-cycle-subtree))
+          ('hs-cycle-subtree
+           (hs-hide-block))
+          (_
+           (if (not (hs-already-hidden-p))
+               (hs-hide-block)
+             (hs-hide-level 1)
+             (setq this-command 'hs-cycle-children))))
+      (hs-hide-level level)
+      (setq this-command 'hs-hide-level))))
+
+(defun hs-global-cycle ()
+  (interactive)
+  (pcase last-command
+    ('hs-global-cycle
+     (save-excursion (hs-show-all))
+     (setq this-command 'hs-global-show))
+    (_ (hs-hide-all))))

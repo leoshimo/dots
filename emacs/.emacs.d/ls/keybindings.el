@@ -92,6 +92,7 @@
    "b" '(hydra-buffer/body t :which-key "Buffer")
    "e" '(hydra-error/body t :which-key "Errors")
    "w" '(hydra-window/body :which-key "Windows")
+   "z" '(hydra-hideshow/body t :which-key "Hideshow")
 
    ;; term
    "ot" '(multi-term-dedicated-toggle :which-key "toggle term")
@@ -175,6 +176,15 @@
     ("n" next-error "next")
     ("p" previous-error "prev")
     ("v" recenter-top-bottom "recenter")
+    ("q" nil "quit"))
+
+  (defhydra hydra-hideshow (:hint nil :colur blue :columns 1)
+    "hideshow"
+    ("z" hs-cycle "cycle")
+    ("r" hs-show-all "show all")
+    ("m" hs-hide-all "hide all")
+    ("a" hs-toggle-hiding "toggle hiding")
+    ("l" hs-hide-level "hide level")
     ("q" nil "quit"))
 
   (defhydra hydra-window (:color red :hint nil)
