@@ -404,3 +404,12 @@ Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]
 (add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
 #+end_src
 
+
+* github
+
+#+begin_src emacs-lisp
+(define-key magit-status-mode-map (kbd "C-c C-p")
+            (lambda ()
+              (interactive)
+              (start-process "*gh pr create*" nil "gh" "pr" "create" "--web")))
+#+end_src
