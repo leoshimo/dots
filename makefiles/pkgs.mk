@@ -47,6 +47,8 @@ pkgs_rust:		## Install packages for Rust Development
 	rustup component add rust-analyzer
 	cargo install cargo-edit # for cargo upgrade
 	cargo install cargo-audit
+	cargo install cargo-watch
+	cargo install systemfd
 
 # Janet
 .PHONY: pkgs_janet
