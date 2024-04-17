@@ -286,13 +286,3 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   "Major mode for Lyric lang")
 
 (add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
-
-(define-key magit-status-mode-map (kbd "C-c C-p")
-            (lambda ()
-              (interactive)
-              (start-process "*gh pr create*" nil "gh" "pr" "create" "--web")))
-
-(use-package origami
-  :config
-  (require 'origami)
-  (global-origami-mode))

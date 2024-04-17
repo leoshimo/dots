@@ -413,14 +413,3 @@ Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]
               (interactive)
               (start-process "*gh pr create*" nil "gh" "pr" "create" "--web")))
 #+end_src
-
-* folding - origami
-
-https://github.com/gregsexton/origami.el
-
-#+begin_src emacs-lisp
-(use-package origami
-  :config
-  (require 'origami)
-  (global-origami-mode))
-#+end_src
