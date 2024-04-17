@@ -30,7 +30,7 @@
 			<key>HTMX</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:59:13Z</date>
+				<date>2024-03-26T04:55:51Z</date>
 				<key>entry</key>
 				<dict>
 					<key>docsetGeneratorSettings</key>
@@ -173,7 +173,7 @@ $("h1").each(function() {
 			<key>askama</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:57:48Z</date>
+				<date>2024-03-26T04:55:52Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -187,7 +187,7 @@ $("h1").each(function() {
 			<key>axum</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-25T18:12:11Z</date>
+				<date>2024-03-26T04:56:37Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -196,12 +196,26 @@ $("h1").each(function() {
 					<string>crate</string>
 					<key>uniqueIdentifier</key>
 					<string>axum</string>
+				</dict>
+			</dict>
+			<key>bytes</key>
+			<dict>
+				<key>date</key>
+				<date>2024-03-30T04:29:48Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>bytes</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>bytes</string>
 				</dict>
 			</dict>
 			<key>clap</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:57:39Z</date>
+				<date>2024-03-26T04:56:02Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -212,10 +226,24 @@ $("h1").each(function() {
 					<string>clap</string>
 				</dict>
 			</dict>
+			<key>futures</key>
+			<dict>
+				<key>date</key>
+				<date>2024-04-06T04:16:20Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>futures</string>
+					<key>platform</key>
+					<string>crate</string>
+					<key>uniqueIdentifier</key>
+					<string>futures</string>
+				</dict>
+			</dict>
 			<key>gloo</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T22:07:55Z</date>
+				<date>2024-03-26T04:56:09Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -229,7 +257,7 @@ $("h1").each(function() {
 			<key>minijinja</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-22T17:02:35Z</date>
+				<date>2024-04-11T15:34:57Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -243,7 +271,7 @@ $("h1").each(function() {
 			<key>serde_json</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:57:57Z</date>
+				<date>2024-04-16T15:59:07Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -257,7 +285,7 @@ $("h1").each(function() {
 			<key>sqlx</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:58:01Z</date>
+				<date>2024-03-26T04:56:31Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -271,7 +299,7 @@ $("h1").each(function() {
 			<key>tokio</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:57:45Z</date>
+				<date>2024-03-29T05:55:01Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -285,7 +313,7 @@ $("h1").each(function() {
 			<key>toml</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:58:06Z</date>
+				<date>2024-03-26T04:55:59Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -412,7 +440,7 @@ $("h1").each(function() {
 			<key>http://kapeli.com/feeds/Apple_API_Reference.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:57:17Z</date>
+				<date>2024-03-26T04:57:18Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Boost.xml</key>
 			<dict>
@@ -442,12 +470,12 @@ $("h1").each(function() {
 			<key>http://kapeli.com/feeds/Emacs_Lisp.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:57:07Z</date>
+				<date>2024-03-26T04:55:57Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Emmet.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:57:30Z</date>
+				<date>2024-03-26T04:55:52Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Erlang.xml</key>
 			<dict>
@@ -467,7 +495,7 @@ $("h1").each(function() {
 			<key>http://kapeli.com/feeds/Jinja.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-21T15:56:23Z</date>
+				<date>2024-03-26T04:55:52Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Lua_5.4.xml</key>
 			<dict>
@@ -696,6 +724,22 @@ $("h1").each(function() {
 			<key>docsets</key>
 			<array>
 				<string>~/Library/Application Support/Dash/DocSets/Rust/Rust.docset</string>
+				<string>~/Library/Application Support/Dash/Docset Generator/HTMX/HTMX.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/askama/askama.docset</string>
+				<string>~/Library/Application Support/Dash/DocSets/Jinja/Jinja.docset</string>
+				<string>~/Library/Application Support/Dash/DocSets/Emmet/Emmet.docset</string>
+				<string>~/Library/Application Support/Dash/DocSets/Emacs_Lisp/Emacs Lisp.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/toml/toml.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/minijinja/minijinja.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/clap/clap.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/gloo/gloo.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/tokio/tokio.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/sqlx/sqlx.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/serdejson/serde_json.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/axum/axum.docset</string>
+				<string>~/Library/Application Support/Dash/DocSets/Apple_API_Reference/Apple_API_Reference.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/bytes/bytes.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/futures/futures.docset</string>
 			</array>
 			<key>icon</key>
 			<string>rust</string>
