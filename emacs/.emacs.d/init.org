@@ -421,6 +421,8 @@ Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]
   :config
   (setq hs-isearch-open t))
 
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+
 (defun hs-cycle (&optional level)
   (interactive "p")
   (let (message-log-max

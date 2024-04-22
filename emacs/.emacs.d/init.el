@@ -296,6 +296,8 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   :config
   (setq hs-isearch-open t))
 
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+
 (defun hs-cycle (&optional level)
   (interactive "p")
   (let (message-log-max
