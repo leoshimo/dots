@@ -229,7 +229,7 @@ $("h1").each(function() {
 			<key>futures</key>
 			<dict>
 				<key>date</key>
-				<date>2024-04-06T04:16:20Z</date>
+				<date>2024-04-18T21:13:35Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -669,6 +669,7 @@ $("h1").each(function() {
 				<string>~/Library/Application Support/Dash/DocSets/Apple_API_Reference/Apple_API_Reference.docset</string>
 				<string>~/Library/Application Support/Dash/DocSets/Man_Pages/Man Pages.docset</string>
 				<string>~/Library/Application Support/Dash/DocSets/Vim/Vim.docset</string>
+				<string>~/Library/Application Support/Dash/Rust DocSets/futures/futures.docset</string>
 			</array>
 			<key>icon</key>
 			<string>Mac</string>
