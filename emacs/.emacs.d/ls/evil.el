@@ -58,3 +58,8 @@
   :config
   (evil-org-set-key-theme '(textobjects insert navigation additional shift heading)))
 
+;; evil-surround - https://github.com/emacs-evil/evil-surround
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
