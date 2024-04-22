@@ -59,6 +59,12 @@ else
 	@echo "Error: Unsupported platform for pkgs_janet" && exit 1
 endif
 
+# Node
+.PHONY: pkgs_node
+pkgs_node: 		## Install Node (nvm, node)
+	curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh" \
+		| bash
+
 # Elixir
 .PHONY: pkgs_elixir
 pkgs_elixir:	## Install Elixir
