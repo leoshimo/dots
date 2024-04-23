@@ -38,9 +38,11 @@ SEARCH_DIR=${1:-'.'}
 # Find XC Files
 PROJ_FILES=($SEARCH_DIR/*.xcodeproj(N))
 WS_FILES=($SEARCH_DIR/*.xcworkspace(N))
+PKG_FILES=($SEARCH_DIR/Package.swift(N))
 XC_FILES=(
     $PROJ_FILES
     $WS_FILES
+    $PKG_FILES
 )
 
 # No files found message
