@@ -23,6 +23,7 @@ link: ## Setup symlinks
 	$(STOW_BIN) git
 	$(STOW_BIN) starship
 	$(STOW_BIN) vim
+	$(STOW_BIN) lldb
 
 ifeq ($(OS),Darwin)
 	$(STOW_BIN) hammerspoon

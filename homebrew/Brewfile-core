@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 
 brew "bat"
+brew "chisel"
 brew "coreutils"
 brew "emacs"
 brew "fd"
