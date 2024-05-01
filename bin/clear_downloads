@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# clear_downloads - Move contents of Downlaods folder to trash on macOS
+# 
+
+mv -n ~/Downloads/* ~/.Trash/
+
+# If there was an existing directory with the same name in .Trash, there may be stragglers
+rm -rf ~/Downloads/*
