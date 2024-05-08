@@ -120,6 +120,13 @@
    "TAB" 'tab-to-tab-stop ;; opt-out of indent-for-tab-command
    )
 
+  ;; smerge
+  (general-define-key
+   :states 'normal
+   :keymaps 'smerge-mode-map
+   :prefix "SPC"
+   "M" '(hydra-smerge/body t :which-key "Smerge"))
+
   ;; elixir - RUN
   (general-define-key
    :states 'normal
@@ -186,6 +193,18 @@
     ("a" hs-toggle-hiding "toggle hiding")
     ("l" hs-hide-level "hide level")
     ("q" nil "quit"))
+
+  (defhydra hydra-smerge (:hint nil :colur blue :columns 1)
+    "smerge"
+    ("m" smerge-keep-current "keep current under cursor")
+    ("a" smerge-keep-all "keep all")
+    ("b" smerge-keep-base "keep base")
+    ("u" smerge-keep-upper "keep upper")
+    ("l" smerge-keep-lower "keep lower")
+    ("n" smerge-next "next")
+    ("p" smerge-prev "prev")
+    ("q" nil "quit"))
+
 
   (defhydra hydra-window (:color red :hint nil)
   "
