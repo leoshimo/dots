@@ -313,7 +313,7 @@ Delete: _o_nly  _d_elete
 (defun toggle-work-org-other-window ()
   "Toggle the work org buffer in other window"
   (interactive)
-  (let* ((filepath "~/proj/org/work.org")
+  (let* ((filepath "~/proj/org/sai/work.org")
          (buf (find-buffer-visiting filepath)))
     (if (and buf (get-buffer-window buf))
         (delete-window (get-buffer-window buf))
