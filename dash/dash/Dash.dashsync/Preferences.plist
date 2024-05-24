@@ -257,7 +257,7 @@ $("h1").each(function() {
 			<key>minijinja</key>
 			<dict>
 				<key>date</key>
-				<date>2024-04-11T15:34:57Z</date>
+				<date>2024-04-29T16:44:46Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -271,7 +271,7 @@ $("h1").each(function() {
 			<key>serde_json</key>
 			<dict>
 				<key>date</key>
-				<date>2024-04-16T15:59:07Z</date>
+				<date>2024-05-08T00:23:22Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -313,7 +313,7 @@ $("h1").each(function() {
 			<key>toml</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-26T04:55:59Z</date>
+				<date>2024-05-15T16:59:11Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
