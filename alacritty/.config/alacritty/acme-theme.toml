@@ -1,0 +1,29 @@
+# Colors (Acme)
+
+[colors.primary]
+background = '0xFFFFEA'
+foreground = '0x000000'
+
+[colors.cursor]
+cursor = '0x9a9857'
+text = '0xFFFFEA'
+
+[colors.normal]
+black =   '0x000000'
+red =     '0x9c1e14'
+green =   '0x2b6319'
+yellow =  '0x9a9857'
+blue =    '0x001293'
+magenta = '0x878ac7'
+cyan =    '0x3e999f'
+white =   '0x424242'
+
+[colors.bright]
+black =   '0x000000'
+red =     '0x9c1e14'
+green =   '0x2b6319'
+yellow =  '0x9a9857'
+blue =    '0x001293'
+magenta = '0x878ac7'
+cyan =    '0x3e999f'
+white =   '0xefeda7'
