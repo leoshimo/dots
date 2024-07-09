@@ -10,3 +10,6 @@
 ;;   :after magit
 ;;   :config
 ;;   (magit-todos-mode))
+
+;; for perf profiling into *Message*
+;; (magit-toggle-verbose-refresh)
