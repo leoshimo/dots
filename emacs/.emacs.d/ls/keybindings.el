@@ -153,6 +153,8 @@
     ("N" evil-buffer-new "new")
     ("d" kill-this-buffer "delete" :color red)
 
+    ("e" erase-buffer "erase" :color red)
+
     ("j" evil-scroll-down "scroll down" :exit nil)
     ("k" evil-scroll-up "scroll up" :exit nil)
     ("J" scroll-other-window-down "scroll down (other)" :exit nil)
@@ -285,13 +287,14 @@ Delete: _o_nly  _d_elete
       (shrink-window arg)
     (enlarge-window arg)))
 
-(defun toggle-scratch-other-window ()
+(defun toggle-scratch-other-window (erase)
   "Toggle scratch buffer in other window"
-  (interactive)
+  (interactive "P")
   (if (not (string= "*scratch*" (buffer-name)))
       (progn
         (setq toggle-scratch-prev-buffer (buffer-name))
-	    (pop-to-buffer (get-scratch-buffer-create)))
+	    (pop-to-buffer (get-scratch-buffer-create))
+        (when erase (erase-buffer)))
     (delete-windows-on "*scratch*")))
 
 (defun toggle-gptel-other-window ()
