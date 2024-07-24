@@ -286,6 +286,8 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 
 (add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
 
+(use-package apples-mode)
+
 (define-key magit-status-mode-map (kbd "C-c C-p")
             (lambda ()
               (interactive)

@@ -404,6 +404,12 @@ Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]
 #+end_src
 
 
+* AppleScript
+
+#+begin_src emacs-lisp
+(use-package apples-mode)
+#+end_src
+
 * github
 
 #+begin_src emacs-lisp
