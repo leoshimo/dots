@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# yabai_split_window - Split window based on yabai
+#
+
+set -euo pipefail
+
+if ! command -v yabai >/dev/null; then exit 1; fi
+if ! command -v jq >/dev/null; then exit 1; fi
+
+PRIMARY_WIN="$(yabai -m query --windows | jq 'first(.[] | select(."has-focus" == true)).id')"
+AUX_WIN="$(yabai -m query --windows | jq 'first(.[] | select(."has-focus" == false)).id')"
+
+echo $PRIMARY_WIN
+echo $AUX_WIN
+
+# Move current window to left half
+yabai --message window "$PRIMARY_WIN" --grid "1:2:0:0:1:1"
+yabai --message window "$AUX_WIN" --grid "1:2:1:0:1:1"
