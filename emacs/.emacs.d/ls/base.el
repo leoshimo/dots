@@ -43,14 +43,14 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Filter non-file and dired buffers when cycling
-(set-frame-parameter (selected-frame) 'buffer-predicate
-                     (lambda (buf)
-                       (let ((name (buffer-name buf))
-                             (major-mode (buffer-local-value 'major-mode buf)))
-                         (not (or (string-prefix-p "*" name)
-                                  (eq 'dired-mode major-mode)
-                                  (string-prefix-p "dired" (symbol-name major-mode))
-                                  (string-prefix-p "magit" (symbol-name major-mode)))))))
+;; (set-frame-parameter (selected-frame) 'buffer-predicate
+;;                      (lambda (buf)
+;;                        (let ((name (buffer-name buf))
+;;                              (major-mode (buffer-local-value 'major-mode buf)))
+;;                          (not (or (string-prefix-p "*" name)
+;;                                   (eq 'dired-mode major-mode)
+;;                                   (string-prefix-p "dired" (symbol-name major-mode))
+;;                                   (string-prefix-p "magit" (symbol-name major-mode)))))))
 
 ;; dash.el - https://github.com/magnars/dash.el
 (use-package dash)
