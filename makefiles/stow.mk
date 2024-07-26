@@ -24,6 +24,7 @@ link: ## Setup symlinks
 	$(STOW_BIN) starship
 	$(STOW_BIN) vim
 	$(STOW_BIN) lldb
+	$(STOW_BIN) ghostty
 
 ifeq ($(OS),Darwin)
 	$(STOW_BIN) hammerspoon

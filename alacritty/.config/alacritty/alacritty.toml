@@ -1,7 +1,7 @@
 live_config_reload = true
 
 import = [
-"~/dots/alacritty/.config/alacritty/acme-theme.toml"
+# "~/dots/alacritty/.config/alacritty/acme-theme.toml"
 ]
 
 [font]
