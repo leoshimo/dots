@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# tmux_new_window_emacs - Create a new emacs window
+#
+
+tmux new-window em
+
