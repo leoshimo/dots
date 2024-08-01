@@ -13,4 +13,10 @@ else
     args=($@ $args)
 fi
 
+if [ -n "$TMUX" ]; then
+    tmux select-pane -T "*EMACS*"
+fi
+
 emacsclient --alternate-editor="" --tty --create-frame "${args[@]}"
+
+tmux select-pane -T -

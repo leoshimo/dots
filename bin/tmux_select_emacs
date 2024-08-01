@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# tmux_select_emacs - Selects active emacs pane, if any
+# 
+
+# Pick newest tmux pane
+PANE_ID=$(tmux list-panes -a -f "#{==:#{pane_title},*EMACS*}" -F '#{pane_id}' | sort -nr | head -1)
+tmux select-pane -t "$PANE_ID"
