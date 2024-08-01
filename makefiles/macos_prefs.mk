@@ -43,6 +43,7 @@ prefs_xcode:
 	defaults write com.apple.dt.Xcode ShowDVTDebugMenu -bool YES					# show debug menu
 	defaults write com.apple.dt.Xcode ApplePersistenceIgnoreState -bool YES			# don't reopen last project
 	defaults write com.apple.dt.Xcode IDEDisableStateRestoration -bool YES			# don't restore last open files
+	defaults write -g _NS_4445425547 -bool true										# enable appkit debug menu
 
 .PHONY: prefs_keymap
 prefs_keymap:				
