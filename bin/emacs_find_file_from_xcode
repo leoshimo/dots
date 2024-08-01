@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# emacs_find_file_from_xcode - Sends last Xcode window's file to Emacs `find-file` 
+#
+
+PROJ_DIR="$HOME/proj"
+
+yabai -m query --windows | \
+    jq 'first(.[] | select(.app == "Xcode")).title' --raw-output | \
+    sed -E "s/([[:alnum:][:punct:]])+ . ([[:alnum:][:punct:]]+)$/\2/g" | \
+    xargs -I{} -- fd --absolute-path --fixed-strings {} "$PROJ_DIR" | \
+    xargs -I{} -- emacsclient --eval '(find-file "{}")'
+
