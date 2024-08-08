@@ -1,3 +1,6 @@
 # Theme
 theme = ayu
 window-decoration = true
+
+# macOS
+macos-option-as-alt = true
