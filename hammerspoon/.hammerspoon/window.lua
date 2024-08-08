@@ -16,6 +16,7 @@ windowManager:bindHotkeys({
 })
 
 windowManager.sizes = {2, 3, 4, 3/2, 4/3}
+windowManager.fullScreenSizes = {1, 6/5, 2}
 
 -- Given a window, move it to the next screen preserving ratio
 local moveWindowToNextScreen = function(win)
