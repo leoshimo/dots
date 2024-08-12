@@ -71,5 +71,15 @@ pkgs_elixir:	## Install Elixir
 ifeq ($(OS),Darwin)
 	brew install elixir
 else
-	@echo "Error: Unsupported platform for pkgs_janet" && exit 1
+	@echo "Error: Unsupported platform for pkgs_elixir" && exit 1
+endif
+
+# Zig
+.PHONY: pkgs_zig
+pkgs_zig: 		## Install Zig
+ifeq ($(OS),Darwin)
+	brew install zig
+	brew install zls
+else
+	@echo "Error: Unsupported platform for pkgs_zig" && exit 1
 endif
