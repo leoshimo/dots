@@ -334,5 +334,9 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
      (setq this-command 'hs-global-show))
     (_ (hs-hide-all))))
 
-(use-package zig-mode
+(use-package zig-mode)
 (add-hook 'zig-mode-hook 'eglot-ensure)
+
+(straight-use-package
+ '(ob-zig :type git :host github :repo "jolby/ob-zig.el"))
+(use-package ob-zig)

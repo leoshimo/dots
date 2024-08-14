@@ -403,7 +403,6 @@ Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]
 (add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
 #+end_src
 
-
 * AppleScript
 
 #+begin_src emacs-lisp
@@ -464,12 +463,16 @@ Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]
     (_ (hs-hide-all))))
 #+end_src
 
-* Zig
+* TODO Zig
 
 zig-mode - https://github.com/ziglang/zig-mode
 ZLS via eglot - https://github.com/zigtools/zls 
 
 #+begin_src emacs-lisp
-(use-package zig-mode
+(use-package zig-mode)
 (add-hook 'zig-mode-hook 'eglot-ensure)
+
+(straight-use-package
+ '(ob-zig :type git :host github :repo "jolby/ob-zig.el"))
+(use-package ob-zig)
 #+end_src
