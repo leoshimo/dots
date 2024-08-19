@@ -19,6 +19,9 @@
   (setq org-src-tab-acts-natively t)
   (setq org-startup-folded t)
   (setq org-startup-indented t)
+
+  (setq org-todo-keywords '((sequence "TODO(t)" "WIP(w)" "|" "DONE(d)")))
+
   (with-eval-after-load 'outline
     (add-hook 'ediff-prepare-buffer-hook #'org-show-all))
   (setq org-babel-python-command "/usr/bin/python3")
@@ -32,6 +35,7 @@
        (python . t)
        (restclient . t)
        (shell . t))))
+
 
 ;; ob-restclient - https://github.com/alf/ob-restclient.el
 (use-package ob-restclient)
