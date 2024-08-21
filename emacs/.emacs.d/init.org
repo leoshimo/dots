@@ -355,7 +355,19 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 * Apple
 
 #+begin_src emacs-lisp
-(use-package swift-mode)
+(use-package swift-mode
+    :bind (:map swift-mode-map
+                ("C-c C-f" . compile-swiftlint-lint)))
+
+(defun compile-swiftlint-lint (&optional autofix)
+  "Runs swiftlint lint --quiet. AUTOFIX prefix argument will try to autofix."
+  (interactive "P")
+  (let* ((dir (vc-root-dir))
+         (default-directory (if dir dir default-directory))
+         (cmd (if autofix
+                  "swiftlint lint --quiet --fix"
+                  "swiftlint lint --quiet")))
+    (compile cmd)))
 #+end_src
 
 * lyric / vrs
@@ -463,7 +475,7 @@ Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]
     (_ (hs-hide-all))))
 #+end_src
 
-* TODO Zig
+* Zig
 
 zig-mode - https://github.com/ziglang/zig-mode
 ZLS via eglot - https://github.com/zigtools/zls 

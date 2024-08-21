@@ -245,7 +245,19 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 ;;   :config
 ;;   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode))
 
-(use-package swift-mode)
+(use-package swift-mode
+    :bind (:map swift-mode-map
+                ("C-c C-f" . compile-swiftlint-lint)))
+
+(defun compile-swiftlint-lint (&optional autofix)
+  "Runs swiftlint lint --quiet. AUTOFIX prefix argument will try to autofix."
+  (interactive "P")
+  (let* ((dir (vc-root-dir))
+         (default-directory (if dir dir default-directory))
+         (cmd (if autofix
+                  "swiftlint lint --quiet --fix"
+                  "swiftlint lint --quiet")))
+    (compile cmd)))
 
 (defvar vrsctl_base_command
      "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_window")
