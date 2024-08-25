@@ -18,6 +18,12 @@ cask "sublime-text"
 cask "tailscale"
 # cask "xcodes"
 
+cask "taskexplorer"
+cask "reikey"
+cask "oversight"
+cask "netiquette"
+cask "knockknock"
+
 tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
 

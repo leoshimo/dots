@@ -120,6 +120,36 @@
         "options": {
           "full_name": "keycastr"
         }
+      },
+      "taskexplorer": {
+        "version": "2.0.2",
+        "options": {
+          "full_name": "taskexplorer"
+        }
+      },
+      "reikey": {
+        "version": "1.4.2",
+        "options": {
+          "full_name": "reikey"
+        }
+      },
+      "oversight": {
+        "version": "2.3.0",
+        "options": {
+          "full_name": "oversight"
+        }
+      },
+      "netiquette": {
+        "version": "2.2.0",
+        "options": {
+          "full_name": "netiquette"
+        }
+      },
+      "knockknock": {
+        "version": "2.5.0",
+        "options": {
+          "full_name": "knockknock"
+        }
       }
     },
     "brew": {
