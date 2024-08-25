@@ -78,8 +78,9 @@ endif
 .PHONY: pkgs_zig
 pkgs_zig: 		## Install Zig
 ifeq ($(OS),Darwin)
-	brew install zig
-	brew install zls
+	zigup
+# brew install zig - see zigup
+# brew install zls
 else
 	@echo "Error: Unsupported platform for pkgs_zig" && exit 1
 endif
