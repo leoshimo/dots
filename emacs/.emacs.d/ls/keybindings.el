@@ -175,6 +175,7 @@
     ("T" consult-theme "Select Theme")
     ("w" toggle-word-wrap "Word Wrap")
     ("e" electric-indent-mode "Electric Indent")
+    ("h" eglot-inlay-hints-mode "Eglot Inlay Hints Mode")
     ("q" nil "quit" :color blue))
 
   (defhydra hydra-error (:hint nil :colur blue :columns 1)
