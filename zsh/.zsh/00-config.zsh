@@ -8,7 +8,7 @@ export TERM='xterm-256color'
 ## Paths
 path=(
   $HOME/.cargo/bin
-  $HOME/.zig/bin
+  $HOME/.zigup/bin
   /opt/homebrew/bin
   $HOME/.mint/bin
   $HOME/dots/bin

@@ -7,12 +7,14 @@ set -euo pipefail
 VERSION="master"
 ARCH="aarch64-macos"
 
-ZIG_DIR="$HOME/.zig"
-ZIG_BIN="${ZIG_DIR}/bin/zig"
-ZLS_BIN="${ZIG_DIR}/bin/zls"
+ZIGUP_DIR="$HOME/.zigup"
+ZIG_BIN="${ZIGUP_DIR}/bin/zig"
+ZIG_DOC="${ZIGUP_DIR}/doc"
 
-mkdir -p "$ZIG_DIR/bin"
-cd "$ZIG_DIR"
+ZLS_BIN="${ZIGUP_DIR}/bin/zls"
+
+mkdir -p "$ZIGUP_DIR/bin"
+cd "$ZIGUP_DIR"
 
 # Install Zig
 ZIG_TAR_URL=$(curl --silent https://ziglang.org/download/index.json \
@@ -20,7 +22,7 @@ ZIG_TAR_URL=$(curl --silent https://ziglang.org/download/index.json \
 ZIG_TAR=$(basename "$ZIG_TAR_URL")
 ZIG_EXTRACT_DIR=$(basename "$ZIG_TAR" ".tar.xz")
 
-if [ ! -d "$ZIG_EXTRACT_DIR" ]; then
+# if [ ! -d "$ZIG_EXTRACT_DIR" ]; then
     echo "Installing Zig"
     echo "Downloading ${ZIG_TAR_URL}"
     curl --silent -O "$ZIG_TAR_URL"
@@ -28,9 +30,13 @@ if [ ! -d "$ZIG_EXTRACT_DIR" ]; then
     echo "Extracting ${ZIG_TAR}"
     tar -xf "$ZIG_TAR"
 
-    echo "Linking ${ZIG_DIR}/bin/zig to ${ZIG_EXTRACT_DIR}/bin/zig"
+    echo "Linking ${ZIGUP_DIR}/bin/zig to ${ZIG_EXTRACT_DIR}/zig"
     ln -sf "../${ZIG_EXTRACT_DIR}/zig" "${ZIG_BIN}"
-fi
+
+    echo "Linking ${ZIGUP_DIR}/doc to ${ZIG_EXTRACT_DIR}/doc"
+    ln -sf "./${ZIG_EXTRACT_DIR}/doc" "${ZIG_DOC}"
+# fi
+    exit
 
 # Install ZLS
 ZLS_ZIG_VERSION_QP=$("$ZIG_BIN" version | urlencode)
@@ -49,6 +55,6 @@ if [ ! -d "$ZLS_EXTRACT_DIR" ]; then
     mkdir -p "$ZLS_EXTRACT_DIR"
     tar -xf "$ZLS_TAR" -C "$ZLS_EXTRACT_DIR"
 
-    echo "Linking ${ZIG_DIR}/${ZLS_EXTRACT_DIR}/zls to ${ZIG_EXTRACT_DIR}/bin/zls"
+    echo "Linking ${ZIGUP_DIR}/${ZLS_EXTRACT_DIR}/zls to ${ZIG_EXTRACT_DIR}/bin/zls"
     ln -sf "../${ZLS_EXTRACT_DIR}/zls" "${ZLS_BIN}"
 fi
