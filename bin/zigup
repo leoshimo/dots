@@ -13,6 +13,11 @@ ZIG_DOC="${ZIGUP_DIR}/doc"
 
 ZLS_BIN="${ZIGUP_DIR}/bin/zls"
 
+if [ "${1:-}" = "clean" ]; then
+    rm -rf "$ZIGUP_DIR"
+    exit
+fi
+
 mkdir -p "$ZIGUP_DIR/bin"
 cd "$ZIGUP_DIR"
 
@@ -22,7 +27,7 @@ ZIG_TAR_URL=$(curl --silent https://ziglang.org/download/index.json \
 ZIG_TAR=$(basename "$ZIG_TAR_URL")
 ZIG_EXTRACT_DIR=$(basename "$ZIG_TAR" ".tar.xz")
 
-# if [ ! -d "$ZIG_EXTRACT_DIR" ]; then
+if [ ! -d "$ZIG_EXTRACT_DIR" ]; then
     echo "Installing Zig"
     echo "Downloading ${ZIG_TAR_URL}"
     curl --silent -O "$ZIG_TAR_URL"
@@ -35,8 +40,7 @@ ZIG_EXTRACT_DIR=$(basename "$ZIG_TAR" ".tar.xz")
 
     echo "Linking ${ZIGUP_DIR}/doc to ${ZIG_EXTRACT_DIR}/doc"
     ln -sf "./${ZIG_EXTRACT_DIR}/doc" "${ZIG_DOC}"
-# fi
-    exit
+fi
 
 # Install ZLS
 ZLS_ZIG_VERSION_QP=$("$ZIG_BIN" version | urlencode)
