@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# xckill - Kill Xcode
+#
+
+pkill -9 Xcode
