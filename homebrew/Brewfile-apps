@@ -16,6 +16,7 @@ cask "notion-calendar"
 cask "raycast"
 cask "sublime-text"
 cask "tailscale"
+cask "tableplus"
 # cask "xcodes"
 
 cask "taskexplorer"
