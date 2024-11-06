@@ -187,7 +187,7 @@ $("h1").each(function() {
 			<key>axum</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-26T04:56:37Z</date>
+				<date>2024-09-27T21:07:25Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -201,7 +201,7 @@ $("h1").each(function() {
 			<key>bytes</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-30T04:29:48Z</date>
+				<date>2024-11-04T18:38:27Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -215,7 +215,7 @@ $("h1").each(function() {
 			<key>clap</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-26T04:56:02Z</date>
+				<date>2024-10-08T22:16:17Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -229,7 +229,7 @@ $("h1").each(function() {
 			<key>futures</key>
 			<dict>
 				<key>date</key>
-				<date>2024-04-18T21:13:35Z</date>
+				<date>2024-10-07T22:17:27Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -257,7 +257,7 @@ $("h1").each(function() {
 			<key>minijinja</key>
 			<dict>
 				<key>date</key>
-				<date>2024-04-29T16:44:46Z</date>
+				<date>2024-11-04T18:38:26Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -271,7 +271,7 @@ $("h1").each(function() {
 			<key>serde_json</key>
 			<dict>
 				<key>date</key>
-				<date>2024-05-08T00:23:22Z</date>
+				<date>2024-11-04T18:38:19Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -299,7 +299,7 @@ $("h1").each(function() {
 			<key>tokio</key>
 			<dict>
 				<key>date</key>
-				<date>2024-03-29T05:55:01Z</date>
+				<date>2024-11-04T18:38:42Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
