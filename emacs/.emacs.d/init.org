@@ -488,3 +488,15 @@ ZLS via eglot - https://github.com/zigtools/zls
  '(ob-zig :type git :host github :repo "jolby/ob-zig.el"))
 (use-package ob-zig)
 #+end_src
+
+* Tcl
+
+#+begin_src emacs-lisp
+(defun tcl-eval-buffer (start end &optional and-go)
+  "Send the current region to the inferior Tcl process. Prefix argument means switch to the Tcl buffer afterwards."
+  (interactive "r\nP")
+  (tcl-eval-region (point-min) (point-max) and-go))
+
+(use-package tcl
+  :bind ("C-c C-c" . tcl-eval-buffer))
+#+end_src
