@@ -18,7 +18,6 @@
 (load-library "company")
 (load-library "evil")
 (load-library "dumb-jump")
-(load-library "ls-gpt")
 (load-library "keybindings")
 (load-library "lisp")
 (load-library "ls-elixir")
@@ -499,4 +498,27 @@ ZLS via eglot - https://github.com/zigtools/zls
 
 (use-package tcl
   :bind ("C-c C-c" . tcl-eval-buffer))
+#+end_src
+
+* himalaya
+https://github.com/dantecatalfamo/himalaya-emacs
+
+#+begin_src emacs-lisp
+(straight-use-package
+    '(himalaya :type git :host github :repo "dantecatalfamo/himalaya-emacs"))
+(use-package himalaya
+  :load-path "~/dots/emacs/.emacs.d/straight/repos/himalaya-emacs")
+#+end_src
+
+* gptel
+
+#+begin_src emacs-lisp
+;; gptel - https://github.com/karthink/gptel/tree/6c47c0a48306e127557caf54c5a03e162e2d2ed3
+(use-package gptel
+  :bind (("C-x RET" . gptel-send))
+  :init
+  (setq gptel-model "gpt-4")
+  (setq gptel-default-mode 'org-mode)
+  (setq gptel-stream 't)
+  (setq gptel-api-key (getenv "OPENAI_API_KEY")))
 #+end_src

@@ -7,7 +7,6 @@
 (load-library "company")
 (load-library "evil")
 (load-library "dumb-jump")
-(load-library "ls-gpt")
 (load-library "keybindings")
 (load-library "lisp")
 (load-library "ls-elixir")
@@ -260,7 +259,7 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
     (compile cmd)))
 
 (defvar vrsctl_base_command
-     "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_window")
+     "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_window --bind cmd_macro")
 
 (defun lyric-eval-buffer (editor_format)
   "Evaluates contents of current buffer"
@@ -352,3 +351,25 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 (straight-use-package
  '(ob-zig :type git :host github :repo "jolby/ob-zig.el"))
 (use-package ob-zig)
+
+(defun tcl-eval-buffer (start end &optional and-go)
+  "Send the current region to the inferior Tcl process. Prefix argument means switch to the Tcl buffer afterwards."
+  (interactive "r\nP")
+  (tcl-eval-region (point-min) (point-max) and-go))
+
+(use-package tcl
+  :bind ("C-c C-c" . tcl-eval-buffer))
+
+(straight-use-package
+    '(himalaya :type git :host github :repo "dantecatalfamo/himalaya-emacs"))
+(use-package himalaya
+  :load-path "~/dots/emacs/.emacs.d/straight/repos/himalaya-emacs")
+
+;; gptel - https://github.com/karthink/gptel/tree/6c47c0a48306e127557caf54c5a03e162e2d2ed3
+(use-package gptel
+  :bind (("C-x RET" . gptel-send))
+  :init
+  (setq gptel-model "gpt-4")
+  (setq gptel-default-mode 'org-mode)
+  (setq gptel-stream 't)
+  (setq gptel-api-key (getenv "OPENAI_API_KEY")))
