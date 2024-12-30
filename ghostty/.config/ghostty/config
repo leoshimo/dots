@@ -1,6 +1,21 @@
+# Ghostty Config
+#
+# Documentation:
+# - file:/Applications/Ghostty.app/Contents/Resources/ghostty/doc/ghostty.1.html
+# - file:/Applications/Ghostty.app/Contents/Resources/ghostty/doc/ghostty.5.html
+#
+# Default Configuration: ghostty +show-config --default --docs
+#
+# Source: https://github.com/ghostty-org/ghostty/blob/main/src/config/Config.zig
+
 # Theme
 theme = ayu
+font-family = "TX-02 SemiCondensed"
+font-size = 12
 window-decoration = true
 
 # macOS
 macos-option-as-alt = true
+
+# Links
+link-url = true
