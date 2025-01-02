@@ -10,7 +10,7 @@
 
 # Theme
 theme = ayu
-font-family = "TX-02 SemiCondensed"
+font-family = "TX-02"
 font-size = 12
 window-decoration = true
 
