@@ -373,3 +373,15 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   (setq gptel-default-mode 'org-mode)
   (setq gptel-stream 't)
   (setq gptel-api-key (getenv "OPENAI_API_KEY")))
+
+(defun display-line-numbers-fitting ()
+  "Use compact width for line numbers"
+  (interactive)
+  (setq display-line-numbers-width nil))
+
+(defun display-line-numbers-equalize ()
+  "Equalize width of line numbers"
+  (interactive)
+  (setq display-line-numbers-width (length (number-to-string (line-number-at-pos (point-max))))))
+
+(add-hook 'find-file-hook 'display-line-numbers-equalize)
