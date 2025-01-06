@@ -20,7 +20,19 @@
   (setq org-startup-folded t)
   (setq org-startup-indented t)
 
-  (setq org-todo-keywords '((sequence "TODO(t)" "WIP(w)" "|" "DONE(d)")))
+  (setq org-todo-keywords '((sequence "TODO(t)" "WIP(w)" "NEXT(n)" "OPEN(o)" "|" "DONE(d)" "MOVE(m)" "KILL(k)")))
+  (setq org-todo-keyword-faces
+    '(("WIP" . org-priority)
+      ("NEXT" . org-priority)
+      ("DONE" . '(shadow org-todo)) 
+      ("MOVE" . '(shadow org-todo)) 
+      ("KILL" . '(shadow org-todo))))
+
+  (set-face-attribute 'org-headline-done nil 
+                      :strike-through t 
+                      :foreground "light gray")
+
+  (setq org-fontify-done-headline t)
 
   (with-eval-after-load 'outline
     (add-hook 'ediff-prepare-buffer-hook #'org-show-all))
