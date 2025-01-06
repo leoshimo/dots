@@ -155,6 +155,8 @@
 
 (add-hook 'org-export-before-processing-hook #'eos/org-inline-css-hook)
 
+(add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c RET") 'gptel-send)))
+
 ;; (use-package smartparens
 ;;   :hook (prog-mode text-mode markdown-mode)
 ;;   :config (require 'smartparens-config))

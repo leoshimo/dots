@@ -193,7 +193,6 @@
 
 * org
 
-
 #+begin_src emacs-lisp
 ;; Auto Link Title
 ;; Adapted from https://gist.github.com/jmn/34cd4205fa30ccf83f94cb1bc0198f3f
@@ -228,6 +227,8 @@
          my-pre-bg my-pre-fg))))))
 
 (add-hook 'org-export-before-processing-hook #'eos/org-inline-css-hook)
+
+(add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c RET") 'gptel-send)))
 #+end_src
 
 * smartparens
