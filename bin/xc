@@ -48,6 +48,12 @@ XC_FILES=(
 # No files found message
 [[ ${#XC_FILES[@]} == 0 ]] && echo "No files found"
 
+# Exit if 1
+if [[ ${#XC_FILES[@]} == 1 ]]; then
+    open -Fa "$CUR_XC" "$XC_FILES[1]"
+    exit
+fi
+
 # Print in single column
 COLUMNS=1
 
