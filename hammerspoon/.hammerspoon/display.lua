@@ -54,7 +54,7 @@ local showAll = false
 
 
 -- Gets all resolutions as sorted list
-local get_resolutions = function(screen)
+local get_resolutions = function(screen, all)
   local modes = screen:availableModes()   -- Available resolution modes
   local resolutions = {}
 
@@ -64,7 +64,7 @@ local get_resolutions = function(screen)
   table.sort(mode_keys)
 
   for _, k in pairs(mode_keys) do
-    if showAll or
+    if all or
       favorites[k] or
       is_current_resolution(modes[k])
     then
@@ -104,7 +104,7 @@ get_menu = function()
   table.insert(menu, item)
 
   -- Add resolutions
-  local resolutions = get_resolutions(hs.screen.mainScreen())
+  local resolutions = get_resolutions(hs.screen.mainScreen(), showAll)
   for key, res in pairs(resolutions) do
     local item = {
       title = res.desc,
@@ -119,11 +119,25 @@ end
 --- Check if given resolution table is currently us =ed
 is_current_resolution = function(res)
   local current = hs.screen.mainScreen():currentMode()
-  return res.w == current.w and
-    res.h == current.h and
-    res.freq == current.freq and
-    res.scale == current.scale and
-    res.depth == current.depth
+  if (type(res) == "table") then
+     return res.w == current.w and
+        res.h == current.h and
+        res.freq == current.freq and
+        res.scale == current.scale and
+        res.depth == current.depth
+  else
+     return current.desc == res
+  end
+end
+
+get_resolution = function(desc)
+   local resolutions = get_resolutions(hs.screen.mainScreen(), true)
+   for i, res in ipairs(resolutions) do
+      if res.desc == desc then
+         return res
+      end
+   end
+   return nil
 end
 
 --[[
@@ -143,3 +157,38 @@ end
 --]]
 
 setup_menu()
+
+--[[
+-- Exported Interface
+--]]
+
+local exports = {}
+
+-- List favorited resolutions as string
+exports.list_resolutions = function()
+   local results = nil
+   local resolutions = get_resolutions(hs.screen.mainScreen(), false)
+   for i, res in ipairs(resolutions) do
+      if is_current_resolution(res) then
+         res.desc = res.desc .. ' (current)'
+      end
+      if results then
+         results = results .. '\n' .. res.desc
+      else
+         results = res.desc
+      end
+      ::continue::
+   end
+   return results
+end
+
+
+-- Select resolution
+exports.select_resolution = function(res_desc)
+   local res = get_resolution(res_desc)
+   if res then
+      change_resolution(res)
+   end
+end
+
+return exports
