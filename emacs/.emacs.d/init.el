@@ -378,9 +378,9 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
  '(ob-zig :type git :host github :repo "jolby/ob-zig.el"))
 (use-package ob-zig)
 
-(defun tcl-eval-buffer (start end &optional and-go)
-  "Send the current region to the inferior Tcl process. Prefix argument means switch to the Tcl buffer afterwards."
-  (interactive "r\nP")
+(defun tcl-eval-buffer (&optional and-go)
+  "Send the current buffer to the inferior Tcl process. Prefix argument means switch to the Tcl buffer afterwards."
+  (interactive "P")
   (tcl-eval-region (point-min) (point-max) and-go))
 
 (use-package tcl
