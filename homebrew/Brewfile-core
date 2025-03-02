@@ -37,3 +37,7 @@ brew "watch"
 brew "wget"
 brew "yank"
 brew "zoxide"
+
+brew "dasel"
+brew "htmlq"
+brew "wader/tap/fq"
