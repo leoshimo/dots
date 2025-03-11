@@ -85,7 +85,7 @@
 (use-package modus-themes
   :config
   (setq modus-themes-to-toggle '(modus-vivendi-tritanopia modus-operandi-tinted))
-  (load-theme 'modus-vivendi-tritanopia t)
+  ;; (load-theme 'modus-vivendi-tritanopia t)
 )
 
 ;; smart-mode-line
@@ -95,6 +95,12 @@
   (setq sml/no-confirm-load-theme t
         sml/theme 'respectful)
   (sml/setup))
+
+;; os1 - https://github.com/sashimacs/os1-theme
+(use-package os1-theme
+  :straight (:type git :host github :repo "sashimacs/os1-theme")
+  :defer nil
+  :config (load-theme 'os1 t))
 
 ;; (use-package acme-theme
 ;;   :config
