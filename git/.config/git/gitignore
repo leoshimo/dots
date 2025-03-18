@@ -1,5 +1,8 @@
 # Global gitignore
 
+# vscode
+.vscode
+
 # macos
 # General
 .DS_Store

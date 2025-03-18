@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-# chrome - CLI glue to Chrome.
-# See also: https://developer.chrome.com/blog/headless-chrome
-
-set -eu
-
-CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-"$CHROME" $@
