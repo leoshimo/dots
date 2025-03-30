@@ -9,7 +9,18 @@
 # Source: https://github.com/ghostty-org/ghostty/blob/main/src/config/Config.zig
 
 # Theme
-theme = ayu
+
+# dark:
+# - ayu
+# - catppuccin-frappe
+# - Dracula+
+# - DoomOne
+# - flexoki-dark
+# light:
+# - farmhouse-light
+# - catppuccin-latte
+# - flexoki-light
+theme = dark:ayu,light:flexoki-light
 font-family = "TX-02"
 font-size = 12
 window-decoration = true
