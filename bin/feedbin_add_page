@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# feedbin_add_page - Add page to Feedbin "Read Later" list
+#
+
+# Docs: https://github.com/feedbin/feedbin-api
+
+set -eo pipefail
+
+URL="$1"
+TITLE="${2:-""}"
+
+if [ -z "$URL" ]; then
+    echo "Usage: $(basename "$0") URL [TITLE]"
+    exit 1
+fi
+
+BASIC_AUTH="$(op item get Feedbin --fields "label=basic_auth")"
+
+curl --request POST \
+     --user "$BASIC_AUTH" \
+     --data-urlencode "url=$URL" \
+     --data-urlencode "title=$TITLE" \
+     --verbose \
+     https://api.feedbin.com/v2/pages.json
