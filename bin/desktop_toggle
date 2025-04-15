@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# desktop_toggle - Toggle visibility of desktop
+#
+
+CREATE_DESKTOP="$(defaults read com.apple.finder CreateDesktop 2>/dev/null || echo false)"
+
+if [ "$CREATE_DESKTOP" = "true" ]; then
+    defaults write com.apple.finder CreateDesktop false
+else
+    defaults write com.apple.finder CreateDesktop true
+fi
+
+killall Finder
