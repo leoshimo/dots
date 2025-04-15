@@ -1,4 +1,5 @@
 # Makefile - macOS Preferences
+# https://macos-defaults.com
 
 .PHONY: prefs
 PREFS = prefs_finder prefs_display prefs_dock prefs_textedit prefs_safari prefs_keymap prefs_theme
@@ -11,6 +12,7 @@ prefs_finder:
 	defaults write com.apple.finder AppleShowAllFiles -bool YES 			# Show hidden files
 	defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES 		# Posix path in title
 	defaults write com.apple.finder ShowPathbar -bool YES 					# Show path bar
+	defaults write com.apple.universalaccess "showWindowTitlebarIcons" -bool "true"
 	killall -9 Finder
 
 .PHONY: prefs_display
