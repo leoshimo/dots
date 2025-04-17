@@ -176,6 +176,7 @@
     ("w" toggle-word-wrap "Word Wrap")
     ("e" electric-indent-mode "Electric Indent")
     ("h" eglot-inlay-hints-mode "Eglot Inlay Hints Mode")
+    ("r" auto-revert-mode "auto-revert-mode")
     ("q" nil "quit" :color blue))
 
   (defhydra hydra-error (:hint nil :colur blue :columns 1)
