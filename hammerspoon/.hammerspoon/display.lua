@@ -18,7 +18,7 @@ favorites["1800x1169@2x 47Hz 8bpp"] = true
 favorites["1800x1125@2x 50Hz 8bpp"] = true
 
 -- M1 16in MBP
-favorites["1496x935@2x 60Hz 8bpp"] = true
+favorites["1728x1117@2x 60Hz 8bpp"] = true
 favorites["2056x1329@2x 120Hz 8bpp"] = true
 favorites["2056x1285@2x 47Hz 8bpp"] = true
 favorites["3456x2160@1x 60Hz 8bpp"] = true
