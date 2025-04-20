@@ -42,3 +42,5 @@ var/
 /projectile-bookmarks.eld
 /projectile.cache
 /zsh/.zsh/antidote_plugins.zsh
+/gmailctl/.gmailctl/credentials.json
+/gmailctl/.gmailctl/token.json

@@ -37,6 +37,7 @@ brew "watch"
 brew "wget"
 brew "yank"
 brew "zoxide"
+brew "gmailctl"
 
 brew "dasel"
 brew "htmlq"

@@ -25,6 +25,7 @@ link: ## Setup symlinks
 	$(STOW_BIN) vim
 	$(STOW_BIN) lldb
 	$(STOW_BIN) ghostty
+	$(STOW_BIN) gmailctl
 
 ifeq ($(OS),Darwin)
 	$(STOW_BIN) hammerspoon
