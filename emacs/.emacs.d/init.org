@@ -260,6 +260,17 @@
          "<style type=\"text/css\">\n pre.src {background-color: %s; color: %s;}</style>\n"
          my-pre-bg my-pre-fg))))))
 
+;; Safari to Org
+(defun leoshimo/org-insert-safari-tabs ()
+  "Insert open Safari tabs in org format"
+  (interactive)
+  (goto-char (line-end-position))
+  (newline)
+  (let ((current-pos (point)))
+    (insert (shell-command-to-string "safari_to_org"))
+    (goto-char current-pos)
+    (goto-char (line-beginning-position))))
+
 (add-hook 'org-export-before-processing-hook #'eos/org-inline-css-hook)
 
 (add-hook 'org-mode-hook (lambda () (local-set-key (kbd "C-c RET") 'gptel-send)))

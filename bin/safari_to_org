@@ -1,0 +1,33 @@
+#!/usr/bin/env osascript
+# safari_to_org - Convert open Safari Tabs to Org headings
+#
+
+-- Get current date in YYYY-MM-DD format
+set theDate to do shell script "date '+%Y-%m-%d'"
+
+-- Get Safari windows and their tabs
+tell application "Safari"
+	set tabInfo to {}
+	set seenURLs to {}
+	repeat with theWindow in windows
+		repeat with theTab in (tabs of theWindow)
+			set theTitle to name of theTab
+			set theURL to URL of theTab
+			-- Only add URL if we haven't seen it before
+			if seenURLs does not contain theURL then
+				copy {title:theTitle, |URL|:theURL} to end of tabInfo
+				copy theURL to end of seenURLs
+			end if
+		end repeat
+	end repeat
+end tell
+
+-- Format as org-mode output with checkboxes
+set orgOutput to "* TODO Safari Tabs <" & theDate & ">" & linefeed
+repeat with tabData in tabInfo
+	set theTitle to title of tabData
+	set theURL to |URL| of tabData
+	set orgOutput to orgOutput & "- [ ] [[" & theURL & "][" & theTitle & "]]" & linefeed
+end repeat
+
+return orgOutput
