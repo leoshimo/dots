@@ -11,6 +11,16 @@ local labels = [
   { name: 'Github' },
 ];
 
+// CC emails mark notification type
+// https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications
+local githubKeepInInbox = [
+  'manual@noreply.github.com',
+  'assign@noreply.github.com',
+  'author@noreply.github.com',
+  'mention@noreply.github.com',
+  'review_requested@noreply.github.com',
+];
+
 // Github rules
 local githubRules = [
   // Label + Forward all GH notifications
@@ -31,12 +41,22 @@ local githubRules = [
     },
     actions: { category: 'personal' },
   },
-  // Delete auto subscriptions
+  // Keep important notifications in Inbox
   {
     filter: {
       and: [
         { from: 'notifications@github.com' },
-        { not: { cc: 'manual@noreply.github.com' } },
+        { or: [{ cc: email } for email in githubKeepInInbox] },
+      ],
+    },
+    actions: { category: 'personal' },
+  },
+  // Delete remaining auto subscriptions
+  {
+    filter: {
+      and: [
+        { from: 'notifications@github.com' },
+        { not: { or: [{ cc: email } for email in githubKeepInInbox] } },
       ],
     },
     actions: {
