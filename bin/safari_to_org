@@ -27,7 +27,7 @@ set orgOutput to "* TODO Safari Tabs <" & theDate & ">" & linefeed
 repeat with tabData in tabInfo
 	set theTitle to title of tabData
 	set theURL to |URL| of tabData
-	set orgOutput to orgOutput & "- [ ] [[" & theURL & "][" & theTitle & "]]" & linefeed
+	set orgOutput to orgOutput & "** TODO [[" & theURL & "][" & theTitle & "]]" & linefeed
 end repeat
 
 return orgOutput
