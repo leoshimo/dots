@@ -25,8 +25,7 @@ shift $(($OPTIND - 1))
 
 # Only Xcode Option
 if [ "$ONLY_XCODE" -eq 1 ]; then
-    echo "Killing running Xcode"
-    killall Xcode
+    pkill Xcode
 fi
 
 # Find Selected Xcode
