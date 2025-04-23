@@ -16,6 +16,9 @@ $ gmailctl init
 # Fetch existing filters
 $ gmailctl download > ~/.gmailctl/config.jsonnet
 
+# Check for syntax errors
+$ gmailctl test
+
 # Compare configuration against existing
 $ gmailctl diff
 

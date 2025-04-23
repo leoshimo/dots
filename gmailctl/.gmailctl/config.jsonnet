@@ -20,12 +20,20 @@ local githubKeepInInbox = [
   'mention@noreply.github.com',
   'review_requested@noreply.github.com',
 ];
+local githubSkipFeedbin = [
+    'push@noreply.github.com',
+];
 
 // Github rules
 local githubRules = [
   // Label + Forward all GH notifications
   {
-    filter: { from: 'notifications@github.com' },
+    filter: {
+      and: [
+        { from: 'notifications@github.com' },
+        { not: { or: [{ cc: email } for email in githubSkipFeedbin] } },
+      ]
+    },
     actions: {
       labels: ['Github'],
       forward: 'github-forwarded.537@feedb.in',

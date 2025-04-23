@@ -20,5 +20,5 @@ curl --request POST \
      --user "$BASIC_AUTH" \
      --data-urlencode "url=$URL" \
      --data-urlencode "title=$TITLE" \
-     --verbose \
      https://api.feedbin.com/v2/pages.json
+     # --verbose \
