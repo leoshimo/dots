@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# plumb - plumb data
+#
+
+DATA="$@"
+echo "$DATA" | cat - ~/obsidian/main/Inbox.md > ~/obsidian/main/temp.md && mv ~/obsidian/main/temp.md ~/obsidian/main/Inbox.md
