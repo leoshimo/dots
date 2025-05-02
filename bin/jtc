@@ -1,0 +1,142 @@
+#!/bin/bash
+# jtc - json token count utility
+#
+
+print_help() {
+  echo "jtc - json token count utility"
+  echo ""
+  echo "Usage:"
+  echo "  cat request.json | jtc [-d DEPTH] [-m MODEL] [-p PATH]"
+  echo ""
+  echo "Options:"
+  echo "  -d DEPTH    How deep to traverse the JSON object (default: 1)"
+  echo "  -m MODEL    Tokenizer model to use (default: Xenova/gpt-4o)"
+  echo "  -p PATH     Starting point in the JSON object (default: root)"
+  echo ""
+  echo "Examples:"
+  echo "  echo '{\"name\": \"John\"}' | jtc"
+  echo "  cat file.json | jtc -d 2"
+  echo "  jtc -d 2 -m \"Xenova/gpt-4o\" -p \".Root.tools\""
+  echo "  jtc -d 2 -m \"Xenova/gpt-4o\" -p \".Root.messages[0]\""
+  echo ""
+  echo "See https://huggingface.co/models?other=tokenizers for available models"
+}
+
+# Default values
+DEPTH=1
+TOKENIZER="Xenova/gpt-4o"
+START_PATH=""
+
+# Parse command line arguments
+while getopts "d:m:p:h" opt; do
+  case $opt in
+    d) DEPTH="$OPTARG" ;;
+    m) TOKENIZER="$OPTARG" ;;
+    p) START_PATH="$OPTARG" ;;
+    h) print_help; exit 0 ;;
+    \?) print_help >&2; exit 1 ;;
+  esac
+done
+
+# Read JSON from stdin
+JSON=$(cat)
+
+# Check for empty input
+if [ -z "$JSON" ]; then
+  print_help >&2
+  exit 1
+fi
+
+# Validate JSON before processing
+if ! echo "$JSON" | jq . >/dev/null 2>&1; then
+  echo "Error: Invalid JSON input" >&2
+  print_help >&2
+  exit 1
+fi
+
+# Function to get token count
+get_token_count() {
+  local json="$1"
+  echo "$json" | tc --model "$TOKENIZER" | awk '{print $1}'
+}
+
+# Function to traverse JSON and print token counts
+traverse_json() {
+  local path="$1"
+  local depth="$2"
+  local json="$3"
+  
+  # Get token count for current path
+  local count=$(get_token_count "$json")
+  if [ -z "$path" ]; then
+    printf "%7d\tTotal\n" "$count"
+  else
+    local preview=""
+    # Check for name if it's an object
+    if echo "$json" | jq -e 'type == "object"' > /dev/null; then
+      preview=$(echo "$json" | jq -r '.name // empty')
+    # For simple types (string, number, boolean), show the value
+    elif echo "$json" | jq -e 'type | . == "string" or . == "number" or . == "boolean"' > /dev/null; then
+      preview=$(echo "$json" | jq -r '. | tostring')
+    fi
+
+    # Clean up preview: remove newlines, trim whitespace, truncate
+    if [ -n "$preview" ]; then
+      # Replace newlines with spaces and trim whitespace
+      preview=$(echo "$preview" | tr '\n' ' ' | awk '{$1=$1};1')
+      # Truncate to 50 chars if needed
+      if [ ${#preview} -gt 50 ]; then
+        preview="${preview:0:50}..."
+      fi
+      printf "%7d\t%s\t\033[2m(%s)\033[0m\n" "$count" "$path" "$preview"
+    else
+      printf "%7d\t%s\n" "$count" "$path"
+    fi
+  fi
+
+  # If we've reached max depth, stop
+  if [ "$depth" -le 0 ]; then
+    return
+  fi
+
+  # Check if it's an object
+  if echo "$json" | jq -e 'type == "object"' > /dev/null; then
+    # Get all keys
+    local keys=$(echo "$json" | jq -r 'keys[]')
+    for key in $keys; do
+      local value
+      # Use bracket notation for keys starting with $
+      if [[ "$key" == \$* ]]; then
+        value=$(echo "$json" | jq -c ".[\"$key\"]")
+      else
+        value=$(echo "$json" | jq -c ".$key")
+      fi
+      if [ -z "$path" ]; then
+        traverse_json ".$key" $((depth-1)) "$value"
+      else
+        traverse_json "$path.$key" $((depth-1)) "$value"
+      fi
+    done
+  # Check if it's an array
+  elif echo "$json" | jq -e 'type == "array"' > /dev/null; then
+    # Get array length
+    local length=$(echo "$json" | jq 'length')
+    for ((i=0; i<length; i++)); do
+      local value=$(echo "$json" | jq -c ".[$i]")
+      local current_path="$path[$i]"
+      traverse_json "$current_path" $((depth-1)) "$value"
+    done
+  fi
+}
+
+# If START_PATH is set, extract the JSON at that path
+if [ -n "$START_PATH" ]; then
+  JSON=$(echo "$JSON" | jq "$START_PATH")
+  if [ $? -ne 0 ]; then
+    echo "Error: Invalid path '$START_PATH'" >&2
+    exit 1
+  fi
+fi
+
+# Start traversal from root with empty path
+traverse_json "$START_PATH" "$DEPTH" "$JSON" 
