@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# url_title - Get title of URL
+#
+
+set -euo pipefail
+
+URL="$1"
+
+if [ -z "$URL" ]; then
+    echo "Error: URL is required" >&2
+    exit 1
+fi
+
+RESPONSE=$(curl -L -s "$URL" || echo "")
+if [ -z "$RESPONSE" ]; then
+    echo "Error: Failed to fetch URL" >&2
+    exit 1
+fi
+
+# Try different selectors in order of preference:
+# 1. Standard title tag
+# 2. Open Graph title
+# 3. Twitter card title
+# 4. Meta title
+echo "$RESPONSE" | htmlq --text "title, meta[property='og:title'], meta[name='twitter:title'], meta[name='title']" | head -n 1
+
+if [ $? -ne 0 ]; then
+    echo "Error: Could not find title in webpage" >&2
+    exit 1
+fi
