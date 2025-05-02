@@ -563,7 +563,7 @@ https://github.com/dantecatalfamo/himalaya-emacs
 (use-package gptel
   :bind (("C-x RET" . gptel-send))
   :init
-  (setq gptel-model "gpt-4")
+  (setq gptel-model "gpt-4o")
   (setq gptel-default-mode 'org-mode)
   (setq gptel-stream 't)
   (setq gptel-api-key (getenv "OPENAI_API_KEY")))

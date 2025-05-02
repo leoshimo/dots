@@ -34,7 +34,7 @@
    "fr" '(consult-recent-file :which-key "File (RecentF)")
    "fs" '(toggle-scratch-org-other-window :which-key "Org Scratch")
    "fS" '(toggle-scratch-other-window :which-key "Scratch")
-   "fw" '(toggle-work-org-other-window :which-key "Org Work")
+   "fw" '(toggle-workspace-other-window :which-key "Org Workspace")
    "fl" '(toggle-log-org-other-window :which-key "Org Log")
 
    ;; gptel
@@ -315,10 +315,10 @@ Delete: _o_nly  _d_elete
         (delete-window (get-buffer-window buf))
         (find-file-other-window filepath))))
 
-(defun toggle-work-org-other-window ()
-  "Toggle the work org buffer in other window"
+(defun toggle-workspace-other-window ()
+  "Toggle the workspace buffer in other window"
   (interactive)
-  (let* ((filepath "~/proj/org/sai/work.org")
+  (let* ((filepath "~/proj/org/workspace.org")
          (buf (find-buffer-visiting filepath)))
     (if (and buf (get-buffer-window buf))
         (delete-window (get-buffer-window buf))
