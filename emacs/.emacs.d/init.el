@@ -412,7 +412,7 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 (use-package gptel
   :bind (("C-x RET" . gptel-send))
   :init
-  (setq gptel-model "gpt-4")
+  (setq gptel-model "gpt-4o")
   (setq gptel-default-mode 'org-mode)
   (setq gptel-stream 't)
   (setq gptel-api-key (getenv "OPENAI_API_KEY")))
@@ -428,3 +428,5 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
   (setq display-line-numbers-width (length (number-to-string (line-number-at-pos (point-max))))))
 
 (add-hook 'find-file-hook 'display-line-numbers-equalize)
+
+(use-package jsonnet-mode)

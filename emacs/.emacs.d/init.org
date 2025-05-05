@@ -584,3 +584,8 @@ https://github.com/dantecatalfamo/himalaya-emacs
 
 (add-hook 'find-file-hook 'display-line-numbers-equalize)
 #+end_src
+* jsonnet
+
+#+begin_src emacs-lisp
+(use-package jsonnet-mode)
+#+end_src
