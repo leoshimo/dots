@@ -1,15 +1,12 @@
-// Auto-imported filters by 'gmailctl download'.
-//
-// WARNING: This functionality is experimental. Before making any
-// changes, check that no diff is detected with the remote filters by
-// using the 'diff' command.
-
-// Uncomment if you want to use the standard library.
 // local lib = import 'gmailctl.libsonnet';
+
+local feedbinEmail = 'gmailforwarded.115@feedb.in';
 
 local labels = [
   { name: 'Github' },
 ];
+
+// # Github
 
 // CC emails mark notification type
 // https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications
@@ -21,7 +18,7 @@ local githubKeepInInbox = [
   'review_requested@noreply.github.com',
 ];
 local githubSkipFeedbin = [
-    'push@noreply.github.com',
+  'push@noreply.github.com',
 ];
 
 // Github rules
@@ -74,8 +71,20 @@ local githubRules = [
   },
 ];
 
+// # Newsletters
+
+local pulseMCPRules = [{
+    filter: {
+      from: 'pulsemcp.com'     
+    },
+    actions: {
+      forward: feedbinEmail
+    }
+}];
+
+
 {
   version: 'v1alpha3',
   labels: labels,
-  rules: githubRules,
+  rules: githubRules + pulseMCPRules,
 }
