@@ -88,6 +88,14 @@
   ;; (load-theme 'modus-vivendi-tritanopia t)
 )
 
+(use-package flexoki-themes
+    :config
+    (load-theme 'flexoki-themes-light t)
+    :custom
+    (flexoki-themes-use-bold-keywords t)
+    (flexoki-themes-use-bold-builtins t)
+    (flexoki-themes-use-italic-comments t))
+
 ;; smart-mode-line
 
 (use-package smart-mode-line
@@ -100,7 +108,9 @@
 (use-package os1-theme
   :straight (:type git :host github :repo "sashimacs/os1-theme")
   :defer nil
-  :config (load-theme 'os1 t))
+  :config
+  ;; (load-theme 'os1 t)
+  )
 
 ;; (use-package acme-theme
 ;;   :config
