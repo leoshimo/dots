@@ -82,9 +82,23 @@ local pulseMCPRules = [{
     }
 }];
 
+// # Auto-Archive
+
+local archiveEmails = [
+  // Receipts
+  'noreply@uber.com'
+];
+
+local archiveRules = [{
+    filter: { or: [{ from: email } for email in archiveEmails] },
+    actions: {
+      archive: true
+    }
+}];
+
 
 {
   version: 'v1alpha3',
   labels: labels,
-  rules: githubRules + pulseMCPRules,
+  rules: githubRules + pulseMCPRules + archiveRules,
 }
