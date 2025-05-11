@@ -22,8 +22,9 @@ cask "tableplus"
 cask "tailscale"
 cask "utm"
 
-cask "claude"
+cask "bartender"
 cask "chatgpt"
+cask "claude"
 cask "huggingchat"
 
 # cask "xcodes"
@@ -33,13 +34,11 @@ cask "huggingchat"
 # cask "reikey"
 # cask "taskexplorer"
 
-
 tap "smudge/smudge"
 brew "smudge/smudge/nightlight"
 
 brew "mas"
 mas "1Password for Safari", id: 1569813296 
-mas "Hidden Bar", id: 1452453066
 mas "Play", id: 6444542118
 mas "QuickShade", id: 931571202
 mas "Soulver 3", id: 1508732804
