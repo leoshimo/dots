@@ -1,3 +1,4 @@
+// Docs: https://github.com/mbrt/gmailctl
 // local lib = import 'gmailctl.libsonnet';
 
 local feedbinEmail = 'gmailforwarded.115@feedb.in';
@@ -44,7 +45,7 @@ local githubRules = [
         { cc: 'manual@noreply.github.com' },
       ],
     },
-    actions: { category: 'personal' },
+    actions: { category: 'forums' },
   },
   // Keep important notifications in Inbox
   {
@@ -54,7 +55,7 @@ local githubRules = [
         { or: [{ cc: email } for email in githubKeepInInbox] },
       ],
     },
-    actions: { category: 'personal' },
+    actions: { category: 'forums' },
   },
   // Delete remaining auto subscriptions
   {
