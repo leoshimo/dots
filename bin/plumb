@@ -2,5 +2,36 @@
 # plumb - plumb data
 #
 
+ARCHIVE=0
+SEPARATOR=0
+
+while getopts "as" opt; do
+  case $opt in
+    a)
+      ARCHIVE=1
+      ;;
+    s)
+      SEPARATOR=1
+      ;;
+  esac
+done
+
+shift $((OPTIND -1))
+
 DATA="$@"
-echo "$DATA" | cat - ~/obsidian/main/Inbox.md > ~/obsidian/main/temp.md && mv ~/obsidian/main/temp.md ~/obsidian/main/Inbox.md
+
+TEMP_FILE=$(mktemp)
+
+TARGET_FILE=~/obsidian/main/Inbox.md
+if [ "$ARCHIVE" -eq 1 ]; then
+  TARGET_FILE=~/obsidian/main/Archive.md
+fi
+
+if [ "$SEPARATOR" -eq 1 ]; then
+  echo "$DATA" | cat - <(echo "---") - "$TARGET_FILE" > "$TEMP_FILE"
+else
+  echo "$DATA" | cat - "$TARGET_FILE" > "$TEMP_FILE"
+fi
+
+mv "$TEMP_FILE" "$TARGET_FILE"
+rm -f "$TEMP_FILE"
