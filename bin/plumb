@@ -28,7 +28,7 @@ if [ "$ARCHIVE" -eq 1 ]; then
 fi
 
 if [ "$SEPARATOR" -eq 1 ]; then
-  echo "$DATA" | cat - <(echo "---") - "$TARGET_FILE" > "$TEMP_FILE"
+  echo "$DATA" | cat - <(printf "\n---\n\n") - "$TARGET_FILE" > "$TEMP_FILE"
 else
   echo "$DATA" | cat - "$TARGET_FILE" > "$TEMP_FILE"
 fi
