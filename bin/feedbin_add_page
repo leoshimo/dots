@@ -16,7 +16,8 @@ fi
 
 BASIC_AUTH="$(op item get Feedbin --fields "label=basic_auth")"
 
-curl --request POST \
+curl --silent \
+     --request POST \
      --user "$BASIC_AUTH" \
      --data-urlencode "url=$URL" \
      --data-urlencode "title=$TITLE" \
