@@ -87,7 +87,8 @@ local pulseMCPRules = [{
 
 local archiveEmails = [
   // Receipts
-  'noreply@uber.com'
+  'noreply@uber.com',
+  'no-reply@lyftmail.com',
 ];
 
 local archiveRules = [{
