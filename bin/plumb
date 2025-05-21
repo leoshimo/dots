@@ -13,12 +13,15 @@ while getopts "as" opt; do
     s)
       SEPARATOR=1
       ;;
+    *)
+      break
+      ;;
   esac
 done
 
 shift $((OPTIND -1))
 
-DATA="$@"
+DATA="$*"
 
 TEMP_FILE=$(mktemp)
 
