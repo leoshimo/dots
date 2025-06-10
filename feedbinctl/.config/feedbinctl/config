@@ -1,0 +1,142 @@
+# feedbinctl configuration
+
+[vars]
+favorites_tag_id = "1168"
+github_tag_id = "4382"
+news_tag_id = "76"
+reddit_tag_id = "438"
+social_tag_id = "2069"
+youtube_tag_id = "1655"
+
+pages_tag_id = "3262013"
+
+keywords = '''
+    ( \
+    emacs \
+    OR rust OR zig OR lisp \
+    OR macOS OR appkit OR xcode OR swift OR Objective-C \
+    OR hypermedia \
+    OR "Model Context Protocol" OR mcp \
+    OR stevekrouse OR geoffreylitt OR simonw \
+    )
+    '''
+
+sai_keywords = '''
+    ( \
+    sky OR skybysoftware \
+    OR "software.inc" OR SoftwareAppsInc \
+    OR raycast OR tryhighlight OR thomaspaulmann \
+    )
+    '''
+
+[[searches]]
+name = '0. Test'
+query = '{{ keywords }} OR {{ sai_keywords }}'
+
+[[searches]]
+name = '1. Recent - Feed'
+query = 'published:>now-7d NOT tag_id:{{ github_tag_id }} NOT tag_id:{{ social_tag_id }} NOT tag_id:{{ youtube_tag_id }} NOT tag_id:{{ reddit_tag_id }}'
+
+[[searches]]
+name = '2. Recent - Starred'
+query = 'feed_id:{{ pages_tag_id }} OR is:starred'
+
+[[searches]]
+name = '3. Keywords'
+query = '("Model Context Protocol" OR MCP OR emacs OR "malleable software" OR geoffreylitt OR lisp OR rust OR zig OR macOS OR appkit OR xcode OR swift OR stevekrouse OR geoffreylitt OR raycast OR tryhighlight OR thomaspaulmann OR hypermedia ) AND NOT (tag_id:{{ github_tag_id }} OR tag_id: 438)'
+
+[[searches]]
+name = '4. Social - Favorites'
+query = 'tag_id:{{ social_tag_id }} AND ("Model Context Protocol" OR MCP OR emacs OR "malleable software" OR geoffreylitt OR lisp OR rust OR zig OR macOS OR appkit OR xcode OR swift OR stevekrouse OR geoffreylitt OR simonw OR steipete OR MLX OR agent OR memory)'
+
+[[searches]]
+name = '5. Keywords - Sky'
+query = '"Software Applications Incorporated" OR "software.inc" OR "sky.app" OR "sky" OR "arix"'
+
+[[searches]]
+name = '5. Keywords - Watchlist'
+query = 'tag_id:{{ social_tag_id }} AND (stevekrouse OR valtown OR raycast OR tryhighlight OR thomaspaulmann OR peduarte OR alterhq)'
+
+[[searches]]
+name = '6. Keywords - Vain'
+query = '"vrs" OR "leoshimo" '
+
+[[searches]]
+name = 'Github - awesome-mcp-servers'
+query = 'awesome-mcp-servers tag_id:{{ github_tag_id }}'
+
+[[searches]]
+name = 'Github - evalstate/fast-agent'
+query = 'title:evalstate/fast-agent tag_id:{{ github_tag_id }}   '
+
+[[searches]]
+name = 'Github - ggml-org/llama.cpp'
+query = '[ggml-org/llama.cpp] tag_id:{{ github_tag_id }}'
+
+[[searches]]
+name = 'Github - ghostty-org/ghostty'
+query = 'title:ghostty-org/ghostty tag_id:{{ github_tag_id }}'
+
+[[searches]]
+name = 'Github - karthink/gptel'
+query = 'title:karthink/gptel tag_id:{{ github_tag_id }} '
+
+[[searches]]
+name = 'Github - leoshimo'
+query = 'leoshimo tag_id:{{ github_tag_id }} '
+
+[[searches]]
+name = 'Github - lizqwerscott/mcp.el '
+query = 'title:lizqwerscott/mcp.el tag_id:{{ github_tag_id }} '
+
+[[searches]]
+name = 'Github - modelcontextprotocol'
+query = 'title:(modelcontextprotocol NOT modelcontextprotocol/swift-sdk) tag_id:{{ github_tag_id }}'
+
+[[searches]]
+name = 'Github - modelcontextprotocol/.github'
+query = 'title:modelcontextprotocol/.github tag_id:{{ github_tag_id }}   '
+
+[[searches]]
+name = 'Github - modelcontextprotocol/modelcontextprotocol'
+query = 'title:modelcontextprotocol/modelcontextprotocol tag_id:{{ github_tag_id }}  '
+
+[[searches]]
+name = 'Github - modelcontextprotocol/python-sdk'
+query = 'title:modelcontextprotocol/python-sdk tag_id:{{ github_tag_id }} '
+
+[[searches]]
+name = 'Github - modelcontextprotocol/swift-sdk'
+query = 'title:modelcontextprotocol/swift-sdk tag_id:{{ github_tag_id }}'
+
+[[searches]]
+name = 'Github - openai/codex'
+query = 'title:openai/codex tag_id:{{ github_tag_id }}'
+
+[[searches]]
+name = 'Github - raycast/extensions'
+query = 'title:[raycast/extensions] '
+
+[[searches]]
+name = 'Github - roc-lang/roc'
+query = 'roc-lang/roc tag_id:{{ github_tag_id }} '
+
+[[searches]]
+name = 'Github - SAI'
+query = 'SoftwareApplicationsInc tag_id:{{ github_tag_id }}'
+
+[[searches]]
+name = 'Github - simonw/llm'
+query = 'simonw/llm tag_id:{{ github_tag_id }} '
+
+[[searches]]
+name = 'Github - StitchDesign/Stitch'
+query = 'title:StitchDesign/Stitch tag_id:{{ github_tag_id }}    '
+
+[[searches]]
+name = 'Model Context Protocol'
+query = 'MCP OR modelcontextprotocol OR "model context protocol" '
+
+[[searches]]
+name = 'YouTube'
+query = 'type:youtube.com OR link:youtube.com '
