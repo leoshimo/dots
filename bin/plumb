@@ -5,13 +5,16 @@
 ARCHIVE=0
 SEPARATOR=0
 
-while getopts "as" opt; do
+while getopts "ast" opt; do
   case $opt in
     a)
       ARCHIVE=1
       ;;
     s)
       SEPARATOR=1
+      ;;
+    t)
+      TODO=1
       ;;
     *)
       break
@@ -29,6 +32,13 @@ TARGET_FILE=~/obsidian/main/Inbox.md
 if [ "$ARCHIVE" -eq 1 ]; then
   TARGET_FILE=~/obsidian/main/Archive.md
 fi
+
+if [[ $TODO -eq 1 ]]; then
+    if [[ $DATA != "- [ ] "* ]]; then
+        DATA="- [ ] $DATA"
+    fi
+fi
+
 
 if [ "$SEPARATOR" -eq 1 ]; then
   echo "$DATA" | cat - <(printf "\n---\n\n") - "$TARGET_FILE" > "$TEMP_FILE"
