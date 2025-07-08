@@ -3,7 +3,9 @@
 ;;
 
 ;; magit - https://github.com/magit/magit
-(use-package magit)
+(use-package magit
+  :custom
+  (magit-git-executable "/opt/homebrew/bin/git"))
 
 ;; magit-todos - https://github.com/alphapapa/magit-todos
 ;; (use-package magit-todos
