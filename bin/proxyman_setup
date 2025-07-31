@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# proxyman_setup - Setup Proxyman in current shell environment
+#
+
+set -a && source "$HOME/Library/Application Support/com.proxyman.NSProxy/app-data/proxyman_env_automatic_setup.sh" && set +a
+
