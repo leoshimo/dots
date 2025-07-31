@@ -21,12 +21,12 @@
 # - catppuccin-latte
 # - flexoki-light
 theme = dark:ayu,light:flexoki-light
-# font-family = "TX-02"
+font-family = "TX-02"
 font-size = 12
 window-decoration = true
 
-font-family = "Kelmscott Mono"
-adjust-cell-height = 2
+# font-family = "Kelmscott Mono"
+# adjust-cell-height = 2
 
 # macOS
 macos-option-as-alt = true
