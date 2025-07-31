@@ -1,0 +1,19 @@
+#!/usr/bin/env osascript
+# xcode_current_files - Get the current open files in Xcode
+#
+
+tell application "Xcode"
+    try
+        set sourceDocs to every source document
+        set allPaths to ""
+        
+        repeat with doc in sourceDocs
+            set docPath to path of doc
+            set allPaths to allPaths & docPath & "\n"
+        end repeat
+        
+        return allPaths
+    on error errMsg
+        error "Error: " & errMsg
+    end try
+end tell

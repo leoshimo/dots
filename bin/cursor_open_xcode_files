@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# cursor_open_xcode_files
+#
+
+xcode_current_files \
+    | tr '\n' '\0' \
+    | xargs -0 cursor
