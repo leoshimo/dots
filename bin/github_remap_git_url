@@ -1,0 +1,5 @@
+#!/usr/bin/env
+# github_remap_git_url - Remap https URLs to ssh
+#
+
+git config --global url.ssh://git@github.com/.insteadOf https://github.com/
