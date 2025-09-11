@@ -8,29 +8,23 @@
 #
 # Source: https://github.com/ghostty-org/ghostty/blob/main/src/config/Config.zig
 
-##############################
+#
 # Theme
-##############################
+#
 
 theme = dark:ayu,light:flexoki-light
 window-decoration = true
 
-##############################
+# 
 # Behaviors
-##############################
+#
 
 # Links
 link-url = true
 
-##############################
-# macOS
-##############################
-
-macos-option-as-alt = true
-
-##############################
+#
 # Font
-##############################
+#
 
 font-size = 13
 adjust-cell-height = -2%
