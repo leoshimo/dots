@@ -81,20 +81,28 @@
 (global-hl-line-mode t)
 (setq global-hl-line-sticky-flag t)
 
+;; tao-theme - https://github.com/11111000000/tao-theme-emacs
+(use-package tao-theme
+  :config
+  ;; (load-theme 'tao-yin t)
+  ;; (load-theme 'tao-yang t)
+)
+
 ;; modus-themes - https://protesilaos.com/emacs/modus-themes
 (use-package modus-themes
   :config
-  (setq modus-themes-to-toggle '(modus-vivendi-tritanopia modus-operandi-tinted))
+  ;; setq modus-themes-to-toggle '(modus-vivendi-tritanopia modus-operandi-tinted))
   ;; (load-theme 'modus-vivendi-tritanopia t)
 )
 
 (use-package flexoki-themes
     :config
-    (load-theme 'flexoki-themes-light t)
+    ;; (load-theme 'flexoki-themes-light t)
     :custom
-    (flexoki-themes-use-bold-keywords t)
-    (flexoki-themes-use-bold-builtins t)
-    (flexoki-themes-use-italic-comments t))
+    ;; (flexoki-themes-use-bold-keywords t)
+    ;; (flexoki-themes-use-bold-builtins t)
+    ;; (flexoki-themes-use-italic-comments t)
+    )
 
 ;; smart-mode-line
 
@@ -109,8 +117,7 @@
   :straight (:type git :host github :repo "sashimacs/os1-theme")
   :defer nil
   :config
-  ;; (load-theme 'os1 t)
-  )
+  # (load-theme 'os1 t))
 
 ;; (use-package acme-theme
 ;;   :config
