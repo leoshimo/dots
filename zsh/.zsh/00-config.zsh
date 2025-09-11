@@ -88,3 +88,6 @@ eval "$(zoxide init zsh --cmd j)"
 # iex
 export ERL_AFLAGS="-kernel shell_history enabled"
 
+# plan9port
+export PLAN9=/Users/leoshimo/proj/plan9port export PLAN9
+export PATH=$PATH:$PLAN9/bin export PATH
