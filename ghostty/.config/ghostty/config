@@ -8,28 +8,77 @@
 #
 # Source: https://github.com/ghostty-org/ghostty/blob/main/src/config/Config.zig
 
+##############################
 # Theme
+##############################
 
-# dark:
-# - ayu
-# - catppuccin-frappe
-# - Dracula+
-# - DoomOne
-# - flexoki-dark
-# light:
-# - farmhouse-light
-# - catppuccin-latte
-# - flexoki-light
 theme = dark:ayu,light:flexoki-light
-font-family = "TX-02"
-font-size = 12
 window-decoration = true
+
+##############################
+# Behaviors
+##############################
+
+# Links
+link-url = true
+
+##############################
+# macOS
+##############################
+
+macos-option-as-alt = true
+
+##############################
+# Font
+##############################
+
+font-size = 13
+adjust-cell-height = -2%
 
 # font-family = "Kelmscott Mono"
 # adjust-cell-height = 2
 
-# macOS
-macos-option-as-alt = true
+font-family = "Berkeley Mono Variable"
 
-# Links
-link-url = true
+# Font width (60 to 100)
+#  60 = UltraCondensed
+#  70 = ExtraCondensed
+#  80 = Condensed
+#  90 = SemiCondensed
+# 100 = Normal
+font-variation = wdth=90
+
+# Font weight (100 to 900)
+# 100 = Thin
+# 200 = ExtraLight
+# 300 = Light
+# 350 = SemiLight
+# 400 = Regular
+# 500 = Medium
+# 600 = SemiBold
+# 700 = Bold
+# 800 = ExtraBold
+# 900 = Black
+font-variation = wght=400
+
+# Font slant (0 to -16)
+#   0 = Regular
+# -16 = Oblique
+font-variation = slnt=0
+
+# otfinfo -f ~/.local/share/fonts/Berkeley\ Mono\ Variable.otf
+# aalt    Access All Alternates
+# calt    Contextual Alternates
+# ccmp    Glyph Composition/Decomposition
+# mark    Mark Positioning
+# mkmk    Mark to Mark Positioning
+# salt    Stylistic Alternates
+# ss01    Stylistic Set 1 <- slashed 0
+# ss02    Stylistic Set 2 <- dotted 0
+# ss03    Stylistic Set 3 <- gap 0
+# ss04    Stylistic Set 4 <- slashed 0, slash 7
+# ss05    Stylistic Set 5 <- dotted 0, slash 7
+# ss06    Stylistic Set 6 <- gap 0, slash 7
+font-feature = +calt
+font-feature = +ss02
+
