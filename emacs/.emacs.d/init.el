@@ -117,7 +117,8 @@
   :straight (:type git :host github :repo "sashimacs/os1-theme")
   :defer nil
   :config
-  # (load-theme 'os1 t))
+  # (load-theme 'os1 t)
+)
 
 ;; (use-package acme-theme
 ;;   :config
