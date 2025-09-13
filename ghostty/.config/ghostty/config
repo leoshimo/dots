@@ -27,7 +27,7 @@ link-url = true
 #
 
 font-size = 13
-adjust-cell-height = -2%
+# adjust-cell-height = -2%
 
 # font-family = "Kelmscott Mono"
 # adjust-cell-height = 2
