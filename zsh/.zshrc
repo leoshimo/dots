@@ -28,3 +28,5 @@ export PATH="$PATH:$HOME/.cache/lm-studio/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude="/Users/leoshimo/.claude/local/claude"
