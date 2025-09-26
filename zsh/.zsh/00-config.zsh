@@ -91,3 +91,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # plan9port
 export PLAN9=/Users/leoshimo/proj/plan9port export PLAN9
 export PATH=$PATH:$PLAN9/bin export PATH
+
+# lsregister
+export PATH="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support:$PATH"
