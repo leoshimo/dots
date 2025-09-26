@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# hopper - Open in Hopper
+#
+
+DYLD_SHARED_CACHE_PATH="/System/Volumes/Preboot/Cryptexes/OS/System/Library/dyld/dyld_shared_cache_arm64e"
+
+if [ "$#" -eq 0 ]; then
+    open -a "Hopper Disassembler v4" "$DYLD_SHARED_CACHE_PATH"
+else
+    open -a "Hopper Disassembler v4" "$@"
+fi
