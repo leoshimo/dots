@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# dock_autohide_toggle - Toggle dock visibility
+#
+
+CURRENT=$(defaults read com.apple.Dock autohide)
+
+if [ "$CURRENT" -eq 1 ]; then
+    defaults write com.apple.Dock autohide -bool false
+else
+    defaults write com.apple.Dock autohide -bool true
+fi
+
+killall Dock
