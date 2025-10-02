@@ -52,14 +52,9 @@
 [alias]
   ; checkout
   co = checkout
-  checkoutfuzzy = !git_checkout_fuzzy
   cof = !git_checkout_fuzzy
-  checkoutrecent = !git_checkout_recent
   cor = !git_checkout_recent
-  checkoutpreview = !git_checkout_preview
-  cop = !git_checkout_preview
-  checkoutpr = !git_checkout_pr
-  copr = !git_checkout_pr
+  cop = !git_checkout_pr
 
   f = fetch
   p = pull
