@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# appkit_enable_debug - Enable AppKit Debug Menu
+#
+
+defaults write -g _NS_4445425547 -bool true
