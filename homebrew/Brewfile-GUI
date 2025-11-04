@@ -1,0 +1,15 @@
+# Brewfile - Apps
+
+cask "1password"
+cask "dropbox"
+cask "google-chrome"
+cask "hammerspoon"
+cask "pixelsnap"
+cask "proxyman"
+cask "tableplus"
+cask "bartender"
+
+cask "xcodes-app"
+
+tap "smudge/smudge"
+brew "smudge/smudge/nightlight"

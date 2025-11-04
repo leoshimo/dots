@@ -1,0 +1,37 @@
+# Brewfile - CLI
+
+brew "stow"
+brew "tmux"
+
+tap "d12frosted/emacs-plus"
+brew "emacs-plus"
+
+brew "fd"
+brew "tree"
+
+brew "watch"
+brew "fswatch"
+
+brew "git"
+brew "gh"
+
+brew "ripgrep"
+brew "jq"
+brew "gron"
+brew "dasel"
+brew "htmlq"
+
+brew "zoxide"
+brew "starship"
+brew "yank"
+brew "fzf"
+brew "spacer"
+
+brew "procs"
+brew "pstree"
+
+tap "koekeishiya/formulae"
+brew "koekeishiya/formulae/yabai"
+
+brew "uv"
+
