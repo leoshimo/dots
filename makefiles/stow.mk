@@ -17,5 +17,6 @@ link: ## Setup symlinks
 
 ifeq ($(OS),Darwin)
 	$(STOW_BIN) hammerspoon
-	$(STOW_BIN) launchagents
+
+	$(STOW_BIN) --no-foldering launchagents
 endif
