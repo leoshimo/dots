@@ -8,6 +8,7 @@ cask "pixelsnap"
 cask "proxyman"
 cask "tableplus"
 cask "bartender"
+cask "ghostty"
 
 cask "xcodes-app"
 
