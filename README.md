@@ -3,12 +3,14 @@
 leoshimo's dotfiles repository for linux and macOS machines.
 See `make help` for overview.
 
-## Installation
+## Setup a new machine
 
 ```sh
-$ ssh-keygen -t ed25519 -C "<NAME_OF_MACHINE>"
+$ scutil --set HostName <HOSTNAME>
+$ ssh-keygen -t ed25519 -C "$(hostname -s)"
 
-# Via Brew / GH:
+# macOS:
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 $ brew install gh
 $ gh auth login
 $ gh repo clone leoshimo/dots
