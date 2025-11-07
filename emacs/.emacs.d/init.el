@@ -98,7 +98,7 @@
 (use-package flexoki-themes
     :config
     ;; (load-theme 'flexoki-themes-light t)
-    :custom
+    ;; :custom
     ;; (flexoki-themes-use-bold-keywords t)
     ;; (flexoki-themes-use-bold-builtins t)
     ;; (flexoki-themes-use-italic-comments t)

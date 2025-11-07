@@ -30,5 +30,6 @@ pkgs_rust:						## Install Rust toolchain
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	rustup component add rust-analyzer
 	cargo install cargo-edit  # for cargo upgrade
+	cargo install cargo-release
 	cargo install cargo-audit
 	cargo install cargo-watch
