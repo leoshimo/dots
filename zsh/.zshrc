@@ -11,7 +11,7 @@ export PATH="$PATH:$HOME/.local/bin"
 # vrsjmp bindings
 run_vrsjmp_cli () {
     tmux popup -h 80% -w 80% \
-         -E "$HOME/proj/vrs/scripts/vrsjmp_cli.sh"
+         -E "$HOME/code/vrs/scripts/vrsjmp_cli.sh"
 }
 zle -N run_vrsjmp_cli
 bindkey '^g' run_vrsjmp_cli

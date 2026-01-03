@@ -309,7 +309,7 @@ Delete: _o_nly  _d_elete
 (defun toggle-scratch-org-other-window ()
   "Toggle the scratch org buffer in other window"
   (interactive)
-  (let* ((filepath "~/proj/org/scratch.org")
+  (let* ((filepath "~/code/org/scratch.org")
          (buf (find-buffer-visiting filepath)))
     (if (and buf (get-buffer-window buf))
         (delete-window (get-buffer-window buf))
@@ -318,7 +318,7 @@ Delete: _o_nly  _d_elete
 (defun toggle-workspace-other-window ()
   "Toggle the workspace buffer in other window"
   (interactive)
-  (let* ((filepath "~/proj/org/workspace.org")
+  (let* ((filepath "~/code/org/workspace.org")
          (buf (find-buffer-visiting filepath)))
     (if (and buf (get-buffer-window buf))
         (delete-window (get-buffer-window buf))
@@ -327,7 +327,7 @@ Delete: _o_nly  _d_elete
 (defun toggle-log-org-other-window ()
   "Toggle the log org buffer in other window"
   (interactive)
-  (let* ((filepath "~/proj/org/log.org")
+  (let* ((filepath "~/code/org/log.org")
          (buf (find-buffer-visiting filepath)))
     (if (and buf (get-buffer-window buf))
         (delete-window (get-buffer-window buf))

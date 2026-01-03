@@ -24,6 +24,6 @@ ifeq ($(OS),Darwin)
 endif
 
 repos: ## Setup repos
-	mkdir -p $(HOME)/proj
-	[ -d $(HOME)/proj/org ] || \
-		git clone git@github.com:leoshimo/org.git $(HOME)/proj/org
+	mkdir -p $(HOME)/code
+	[ -d $(HOME)/code/org ] || \
+		git clone git@github.com:leoshimo/org.git $(HOME)/code/org
