@@ -3,8 +3,7 @@
 brew "stow"
 brew "tmux"
 
-tap "d12frosted/emacs-plus"
-cask "d12frosted/emacs-plus/emacs-plus@30"
+brew "emacs"
 
 brew "fd"
 brew "tree"
