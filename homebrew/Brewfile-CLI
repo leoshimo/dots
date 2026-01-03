@@ -4,7 +4,7 @@ brew "stow"
 brew "tmux"
 
 tap "d12frosted/emacs-plus"
-brew "emacs-plus"
+cask "d12frosted/emacs-plus/emacs-plus@30"
 
 brew "fd"
 brew "tree"
