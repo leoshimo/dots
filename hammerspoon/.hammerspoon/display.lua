@@ -33,6 +33,10 @@ favorites["2560x1440@2x 60Hz 8bpp"] = true
 favorites["2880x1620@2x 60Hz 8bpp"] = true
 favorites["3200x1800@2x 60Hz 8bpp"] = true
 
+-- MacBook Air 13in
+favorites["1470x956@2x 60Hz 8bpp"] = true
+favorites["1710x1112@2x 60Hz 8bpp"] = true
+
 --[[
 -- Dependencies
 --]]
