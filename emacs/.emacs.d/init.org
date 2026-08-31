@@ -438,44 +438,12 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 Configuration for [[https://github.com/leoshimo/vrs][vrs runtime and lyric lang]]
 
 #+begin_src emacs-lisp
-(defvar vrsctl_base_command
-     "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_window --bind cmd_macro")
-
-(defun lyric-eval-buffer (editor_format)
-  "Evaluates contents of current buffer"
-  (interactive "P")
-  (if editor_format
-      (shell-command-on-region (point-min) (point-max) (concat vrsctl_base_command " --format editor"))
-    (shell-command-on-region (point-min) (point-max) vrsctl_base_command)))
-
-(defun lyric-eval-last-sexp (replace)
-  "Evaluates last sexp. Prefix arg replaces output into current buffer."
-  (interactive "P")
-  (let* ((arg (shell-quote-argument (prin1-to-string (pp-last-sexp))))
-         (cmd (concat vrsctl_base_command (format " --command %s" arg))))
-    (if replace
-        (progn (save-excursion
-                 (forward-char)
-                 (backward-kill-sexp)
-                 (insert (string-trim (shell-command-to-string cmd)))))
-      (shell-command cmd))))
-
-(defun lyric-eval-region (start end replace)
-  "Evaluates contents of region"
-  (interactive "r\nP")
-  (shell-command-on-region start end
-                           vrsctl_base_command
-                           nil replace))
-
-(defvar-keymap lyric-mode-map
-  "C-c C-c" #'lyric-eval-buffer
-  "C-c C-e" #'lyric-eval-last-sexp
-  "C-c C-r" #'lyric-eval-region)
-
-(define-derived-mode lyric-mode janet-mode "lyric"
-  "Major mode for Lyric lang")
-
-(add-to-list 'auto-mode-alist '("\\.ll\\'" . lyric-mode))
+(let ((vrs-emacs-dir (expand-file-name "~/code/vrs/emacs")))
+  (when (file-directory-p vrs-emacs-dir)
+    (add-to-list 'load-path vrs-emacs-dir)
+    (when (require 'lyric-mode nil t)
+      (setq lyric-vrsctl-command
+            "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_window --bind cmd_macro"))))
 #+end_src
 
 * AppleScript
