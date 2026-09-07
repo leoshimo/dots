@@ -322,9 +322,9 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
 (let ((vrs-emacs-dir (expand-file-name "~/code/vrs/emacs")))
   (when (file-directory-p vrs-emacs-dir)
     (add-to-list 'load-path vrs-emacs-dir)
-    (when (require 'lyric-mode nil t)
-      (setq lyric-vrsctl-command
-            "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_window --bind cmd_macro"))))
+    (when (require 'vrs-mode nil t)
+      (setq vrs-vrsctl-command
+            "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_apps --bind os_window --bind cmd_macro"))))
 
 (use-package apples-mode)
 
