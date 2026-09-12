@@ -8,13 +8,13 @@ export PATH="/opt/homebrew/opt/avr-gcc@8/bin:$PATH"
 # Created by `pipx` on 2023-10-26 11:33:54
 export PATH="$PATH:$HOME/.local/bin"
 
-# vrsjmp bindings
-run_vrsjmp_cli () {
+# Open vrsjmp-terminal in a tmux popup.
+run_vrsjmp_terminal () {
     tmux popup -h 80% -w 80% \
-         -E "$HOME/code/vrs/scripts/vrsjmp_cli.sh"
+         -E "$HOME/code/vrs/scripts/vrsjmp-terminal"
 }
-zle -N run_vrsjmp_cli
-bindkey '^g' run_vrsjmp_cli
+zle -N run_vrsjmp_terminal
+bindkey '^g' run_vrsjmp_terminal
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
