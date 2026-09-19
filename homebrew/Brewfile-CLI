@@ -33,4 +33,5 @@ tap "koekeishiya/formulae"
 brew "koekeishiya/formulae/yabai"
 
 brew "uv"
-
+brew "node"
+brew "pnpm"
