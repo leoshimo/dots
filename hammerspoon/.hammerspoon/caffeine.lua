@@ -22,9 +22,10 @@ local function toggleCaffeine()
     updateIcon(isCaffeinated)
 end
 
+_G.toggleCaffeine = toggleCaffeine
+
 --- Setup menu bar
 if caffeine then
     updateIcon(hs.caffeinate.get("displayIdle"))
     caffeine:setClickCallback(toggleCaffeine)
 end
-
