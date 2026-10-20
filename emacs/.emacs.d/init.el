@@ -324,7 +324,7 @@ If `DEVICE-NAME' is provided, it will be used instead of prompting the user."
     (add-to-list 'load-path vrs-emacs-dir)
     (when (require 'vrs-mode nil t)
       (setq vrs-vrsctl-command
-            "vrsctl --name editor --bind rlist --bind nl_shell --bind interfacegen --bind os_notify --bind todos --bind os_cal --bind os_browser --bind os_apps --bind os_window --bind cmd_macro"))))
+            "vrsctl --name editor"))))
 
 (use-package apples-mode)
 
