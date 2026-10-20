@@ -43,6 +43,11 @@ favorites["1710x1112@2x 60Hz 8bpp"] = true
 favorites["2048x1280@1x 60Hz 8bpp"] = true
 favorites["2048x1332@1x 60Hz 8bpp"] = true
 
+-- Apple Studio Display
+favorites["1280x720@2x 60Hz 8bpp"] = true
+favorites["2560x1440@2x 60Hz 8bpp"] = true
+favorites["2880x1620@2x 60Hz 8bpp"] = true
+
 --[[
 -- Dependencies
 --]]
